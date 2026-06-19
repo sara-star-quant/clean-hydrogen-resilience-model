@@ -1,6 +1,6 @@
 # Clean Hydrogen Resilience Model (Electicity)
 
-[![Release](https://img.shields.io/github/v/release/sara-star-quant/clean-hydrogen-resilience-model?label=release)](https://github.com/sara-star-quant/clean-hydrogen-resilience-model/releases/latest)
+[![Release](https://img.shields.io/github/v/release/sara-star-quant/clean-hydrogen-resilience-model?label=release)](https://github.com/sara-star-quant/clean-hydrogen-resilience-model/releases/latest) [![Code license: Apache 2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE) [![Docs license: CC BY 4.0](https://img.shields.io/badge/docs-CC--BY--4.0-blue.svg)](LICENSE-DOCS)
 
 > **Disclaimer.** This is a research and modelling project, not financial, legal, engineering, or tax advice, and not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
 
