@@ -1,10 +1,10 @@
-# Generated tables <!-- model v0.4.0 @ no-git | params 4dc4a3881481 -->
+# Generated tables <!-- model v0.5.0 @ d26c030 | params 4dc4a3881481 -->
 
 Do not edit by hand. Run `python -m electicity_model.cli render-all` to regenerate.
 
 ## District scenarios
 
-<!-- model v0.4.0 @ no-git | params 4dc4a3881481 -->
+<!-- model v0.5.0 @ d26c030 | params 4dc4a3881481 -->
 <!-- caption: scenario output, not a forecast -->
 
 | Scenario | CapEx | Fits $36M? | LCOE | LCOH |
@@ -15,7 +15,7 @@ Do not edit by hand. Run `python -m electicity_model.cli render-all` to regenera
 
 ## Heavy-duty truck scenarios
 
-<!-- model v0.4.0 @ no-git | params 4dc4a3881481 -->
+<!-- model v0.5.0 @ d26c030 | params 4dc4a3881481 -->
 <!-- caption: scenario output, not a forecast -->
 
 | Scenario | Powertrain | H2 price | TCO | Fuel cost |
