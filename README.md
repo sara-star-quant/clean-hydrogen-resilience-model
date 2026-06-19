@@ -1,5 +1,7 @@
 # Clean Hydrogen Resilience Model (Electicity)
 
+[![Release](https://img.shields.io/github/v/release/sara-star-quant/clean-hydrogen-resilience-model?label=release)](https://github.com/sara-star-quant/clean-hydrogen-resilience-model/releases/latest)
+
 > **Disclaimer.** This is a research and modelling project, not financial, legal, engineering, or tax advice, and not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
 
 Open techno-economic model for green hydrogen via electrolysis from renewables, with two grounded deployment tracks (a Class 8 FCEV truck bench-validation and a 2 MW district hybrid microgrid) and a supply-chain resilience simulation. Reports LCOE, LCOH, and per-km TCO with reproducible, stamped artifacts.
