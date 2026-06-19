@@ -20,15 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: set up python 3.14
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.14"
 
       - name: cache pip
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/pip
           key: pip-${{ runner.os }}-${{ hashFiles('model/pyproject.toml', 'model/requirements.lock') }}
@@ -51,16 +51,19 @@ jobs:
 
       - name: pytest perf budgets
         working-directory: model
-        run: pytest -m perf
+        # Exclude machine-relative regression baselines: they compare microsecond
+        # timings against a baseline recorded on another machine, so a slower CI
+        # runner fails them spuriously. They stay a local-only tool.
+        run: pytest -m 'perf and not regression'
 
   pyright:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: set up python 3.14
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.14"
 
@@ -78,6 +81,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: scan markdown and playground for em-dash and non-ASCII residue
         run: python3 docs/scan_non_ascii.py
