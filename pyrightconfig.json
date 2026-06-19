@@ -1,0 +1,12 @@
+{
+  "include": ["model/src/electicity_model"],
+  "exclude": [
+    "**/__pycache__",
+    "**/profile_cli.py"
+  ],
+  "typeCheckingMode": "strict",
+  "pythonVersion": "3.14",
+  "reportMissingTypeStubs": "none",
+  "venvPath": "model",
+  "venv": ".venv"
+}

@@ -1,0 +1,734 @@
+# Technology parameters — every entry must carry source, year, range_low, range_high.
+# Tests in tests/test_data.py verify schema completeness and that source keys resolve in
+# report/references.md. Numbers are USD 2023 unless otherwise noted.
+
+solar_pv_utility:
+  capex_per_kw:
+    value: 1100
+    range_low: 850
+    range_high: 1400
+    unit: USD_per_kW
+    year: 2023
+    source: IRENA-RPGC-2023
+    notes: Utility-scale fixed-tilt; tracker premium ~+10%.
+  opex_per_kw_yr:
+    value: 18
+    range_low: 12
+    range_high: 25
+    unit: USD_per_kW_yr
+    year: 2023
+    source: NREL-ATB-2024
+  capacity_factor:
+    value: 0.22
+    range_low: 0.18
+    range_high: 0.27
+    unit: dimensionless
+    year: 2023
+    source: IRENA-RPGC-2023
+    notes: Range covers temperate to high-irradiance sites.
+  lifetime_years:
+    value: 25
+    range_low: 20
+    range_high: 30
+    unit: years
+    year: 2023
+    source: NREL-ATB-2024
+
+wind_onshore:
+  capex_per_kw:
+    value: 1300
+    range_low: 1000
+    range_high: 1700
+    unit: USD_per_kW
+    year: 2023
+    source: IRENA-RPGC-2023
+  opex_per_kw_yr:
+    value: 35
+    range_low: 25
+    range_high: 50
+    unit: USD_per_kW_yr
+    year: 2023
+    source: NREL-ATB-2024
+  capacity_factor:
+    value: 0.36
+    range_low: 0.28
+    range_high: 0.50
+    unit: dimensionless
+    year: 2023
+    source: IRENA-RPGC-2023
+  lifetime_years:
+    value: 25
+    range_low: 20
+    range_high: 30
+    unit: years
+    year: 2023
+    source: NREL-ATB-2024
+
+pem_electrolyzer:
+  capex_per_kw:
+    value: 1500
+    range_low: 1100
+    range_high: 2400
+    unit: USD_per_kW
+    year: 2023
+    source: IEA-GHR-2024
+    notes: Stack + balance of plant. Range narrows to $700-1000 by 2030 in IEA forecasts.
+  opex_per_kw_yr:
+    value: 45
+    range_low: 30
+    range_high: 70
+    unit: USD_per_kW_yr
+    year: 2023
+    source: IEA-GHR-2024
+  efficiency_lhv:
+    value: 0.62
+    range_low: 0.58
+    range_high: 0.70
+    unit: dimensionless
+    year: 2023
+    source: IEA-GHR-2024
+    notes: H2 LHV per unit electricity in. SOEC pushes toward 0.80 with steam input.
+  stack_lifetime_hours:
+    value: 80000
+    range_low: 60000
+    range_high: 100000
+    unit: hours
+    year: 2023
+    source: IEA-GHR-2024
+  iridium_loading_g_per_kw:
+    value: 0.5
+    range_low: 0.3
+    range_high: 0.7
+    unit: g_per_kW
+    year: 2023
+    source: USGS-MCS-2025
+    notes: PEM only; AEM/alkaline avoid iridium entirely.
+
+alkaline_electrolyzer:
+  capex_per_kw:
+    value: 1100
+    range_low: 800
+    range_high: 1500
+    unit: USD_per_kW
+    year: 2023
+    source: IEA-GHR-2024
+  opex_per_kw_yr:
+    value: 35
+    range_low: 25
+    range_high: 55
+    unit: USD_per_kW_yr
+    year: 2023
+    source: IEA-GHR-2024
+  efficiency_lhv:
+    value: 0.60
+    range_low: 0.55
+    range_high: 0.65
+    unit: dimensionless
+    year: 2023
+    source: IEA-GHR-2024
+  stack_lifetime_hours:
+    value: 90000
+    range_low: 70000
+    range_high: 110000
+    unit: hours
+    year: 2023
+    source: IEA-GHR-2024
+
+pem_fuel_cell_stationary:
+  capex_per_kw:
+    value: 2200
+    range_low: 1500
+    range_high: 3500
+    unit: USD_per_kW
+    year: 2023
+    source: DOE-H2atScale
+    notes: Stationary stack + BOP, MW-class.
+  opex_per_kw_yr:
+    value: 65
+    range_low: 45
+    range_high: 100
+    unit: USD_per_kW_yr
+    year: 2023
+    source: DOE-H2atScale
+  efficiency_lhv:
+    value: 0.50
+    range_low: 0.45
+    range_high: 0.58
+    unit: dimensionless
+    year: 2023
+    source: DOE-H2atScale
+  platinum_loading_g_per_kw:
+    value: 0.20
+    range_low: 0.10
+    range_high: 0.30
+    unit: g_per_kW
+    year: 2023
+    source: USGS-MCS-2025
+
+pem_fuel_cell_vehicle:
+  capex_per_kw:
+    value: 240
+    range_low: 180
+    range_high: 320
+    unit: USD_per_kW
+    year: 2023
+    source: DOE-HD-FCEV
+    notes: Heavy-duty automotive stack at ~100k units/yr volume; current low-volume cost is 2-3x.
+  efficiency_lhv:
+    value: 0.55
+    range_low: 0.50
+    range_high: 0.60
+    unit: dimensionless
+    year: 2023
+    source: DOE-HD-FCEV
+
+sofc_chp:
+  capex_per_kw:
+    value: 4500
+    range_low: 3500
+    range_high: 6000
+    unit: USD_per_kW
+    year: 2023
+    source: DOE-H2atScale
+  opex_per_kw_yr:
+    value: 130
+    range_low: 90
+    range_high: 200
+    unit: USD_per_kW_yr
+    year: 2023
+    source: DOE-H2atScale
+  electrical_efficiency_lhv:
+    value: 0.55
+    range_low: 0.50
+    range_high: 0.62
+    unit: dimensionless
+    year: 2023
+    source: DOE-H2atScale
+  thermal_recovery_fraction:
+    value: 0.30
+    range_low: 0.20
+    range_high: 0.40
+    unit: dimensionless
+    year: 2023
+    source: DOE-H2atScale
+
+micro_hydro_run_of_river:
+  capex_per_kw:
+    value: 4500
+    range_low: 2500
+    range_high: 8000
+    unit: USD_per_kW
+    year: 2023
+    source: IRENA-RPGC-2023
+    notes: Site-specific; civil works dominate. Low-head sites at upper end.
+  opex_per_kw_yr:
+    value: 45
+    range_low: 25
+    range_high: 80
+    unit: USD_per_kW_yr
+    year: 2023
+    source: IRENA-RPGC-2023
+  capacity_factor:
+    value: 0.55
+    range_low: 0.30
+    range_high: 0.75
+    unit: dimensionless
+    year: 2023
+    source: IRENA-RPGC-2023
+  lifetime_years:
+    value: 40
+    range_low: 30
+    range_high: 60
+    unit: years
+    year: 2023
+    source: IRENA-RPGC-2023
+
+pumped_hydro_storage:
+  capex_per_kwh:
+    value: 130
+    range_low: 70
+    range_high: 250
+    unit: USD_per_kWh
+    year: 2023
+    source: NREL-ATB-2024
+  capex_per_kw:
+    value: 1800
+    range_low: 1300
+    range_high: 2600
+    unit: USD_per_kW
+    year: 2023
+    source: NREL-ATB-2024
+  roundtrip_efficiency:
+    value: 0.78
+    range_low: 0.70
+    range_high: 0.82
+    unit: dimensionless
+    year: 2023
+    source: NREL-ATB-2024
+  lifetime_years:
+    value: 50
+    range_low: 40
+    range_high: 80
+    unit: years
+    year: 2023
+    source: NREL-ATB-2024
+
+smr_nuclear:
+  capex_per_kw:
+    value: 7000
+    range_low: 5500
+    range_high: 12000
+    unit: USD_per_kW
+    year: 2025
+    source: NREL-ATB-2025
+    notes: Small modular reactor. NuScale + RR-SMR + X-energy class. First-of-a-kind premium 2-3x mature cost.
+  opex_per_kw_yr:
+    value: 130
+    range_low: 90
+    range_high: 200
+    unit: USD_per_kW_yr
+    year: 2025
+    source: NREL-ATB-2025
+  capacity_factor:
+    value: 0.92
+    range_low: 0.85
+    range_high: 0.95
+    unit: dimensionless
+    year: 2025
+    source: NREL-ATB-2025
+  lifetime_years:
+    value: 60
+    range_low: 40
+    range_high: 80
+    unit: years
+    year: 2025
+    source: NREL-ATB-2025
+  fuel_cost_per_mwh:
+    value: 8
+    range_low: 5
+    range_high: 12
+    unit: USD_per_MWh
+    year: 2025
+    source: NREL-ATB-2025
+    notes: Fuel + decommissioning reserve.
+
+micro_reactor:
+  capex_per_kw:
+    value: 12000
+    range_low: 9000
+    range_high: 18000
+    unit: USD_per_kW
+    year: 2025
+    source: IEA-NZE-2023
+    notes: 1-20 MWe class. eVinci, USNC MMR, Oklo Aurora. TRL 7-8 in 2026; first commercial deliveries imminent.
+  opex_per_kw_yr:
+    value: 220
+    range_low: 150
+    range_high: 350
+    unit: USD_per_kW_yr
+    year: 2025
+    source: IEA-NZE-2023
+  capacity_factor:
+    value: 0.94
+    range_low: 0.88
+    range_high: 0.97
+    unit: dimensionless
+    year: 2025
+    source: IEA-NZE-2023
+  lifetime_years:
+    value: 20
+    range_low: 10
+    range_high: 40
+    unit: years
+    year: 2025
+    source: IEA-NZE-2023
+    notes: Refuel interval typically 5-20 yr; full decom at 20.
+  fuel_cost_per_mwh:
+    value: 15
+    range_low: 8
+    range_high: 25
+    unit: USD_per_MWh
+    year: 2025
+    source: IEA-NZE-2023
+
+geothermal_egs:
+  capex_per_kw:
+    value: 7500
+    range_low: 5000
+    range_high: 12000
+    unit: USD_per_kW
+    year: 2025
+    source: NREL-ATB-2025
+    notes: Enhanced geothermal (drilled). Eavor/Fervo class TRL 7-8 in 2026. Site-flexible.
+  opex_per_kw_yr:
+    value: 135
+    range_low: 90
+    range_high: 200
+    unit: USD_per_kW_yr
+    year: 2025
+    source: NREL-ATB-2025
+  capacity_factor:
+    value: 0.85
+    range_low: 0.75
+    range_high: 0.95
+    unit: dimensionless
+    year: 2025
+    source: NREL-ATB-2025
+  lifetime_years:
+    value: 30
+    range_low: 25
+    range_high: 50
+    unit: years
+    year: 2025
+    source: NREL-ATB-2025
+
+biomass_chp:
+  capex_per_kw:
+    value: 4200
+    range_low: 3000
+    range_high: 6500
+    unit: USD_per_kW
+    year: 2025
+    source: NREL-ATB-2025
+    notes: Wood-chip / agricultural-residue CHP. Black-start capable, fuel-flexible.
+  opex_per_kw_yr:
+    value: 180
+    range_low: 130
+    range_high: 280
+    unit: USD_per_kW_yr
+    year: 2025
+    source: NREL-ATB-2025
+  fuel_cost_per_mwh:
+    value: 28
+    range_low: 18
+    range_high: 50
+    unit: USD_per_MWh
+    year: 2025
+    source: NREL-ATB-2025
+  capacity_factor:
+    value: 0.80
+    range_low: 0.60
+    range_high: 0.90
+    unit: dimensionless
+    year: 2025
+    source: NREL-ATB-2025
+  lifetime_years:
+    value: 25
+    range_low: 20
+    range_high: 35
+    unit: years
+    year: 2025
+    source: NREL-ATB-2025
+  electrical_efficiency:
+    value: 0.30
+    range_low: 0.22
+    range_high: 0.36
+    unit: dimensionless
+    year: 2025
+    source: NREL-ATB-2025
+  thermal_efficiency:
+    value: 0.50
+    range_low: 0.40
+    range_high: 0.60
+    unit: dimensionless
+    year: 2025
+    source: NREL-ATB-2025
+
+tidal_stream:
+  capex_per_kw:
+    value: 6500
+    range_low: 4500
+    range_high: 12000
+    unit: USD_per_kW
+    year: 2023
+    source: IRENA-RPGC-2023
+    notes: Pre-commercial; cost reduction expected as cumulative deployment grows.
+  opex_per_kw_yr:
+    value: 200
+    range_low: 130
+    range_high: 350
+    unit: USD_per_kW_yr
+    year: 2023
+    source: IRENA-RPGC-2023
+  capacity_factor:
+    value: 0.32
+    range_low: 0.22
+    range_high: 0.40
+    unit: dimensionless
+    year: 2023
+    source: IRENA-RPGC-2023
+  lifetime_years:
+    value: 25
+    range_low: 20
+    range_high: 30
+    unit: years
+    year: 2023
+    source: IRENA-RPGC-2023
+
+li_ion_battery_grid:
+  capex_per_kwh:
+    value: 290
+    range_low: 230
+    range_high: 420
+    unit: USD_per_kWh
+    year: 2025
+    source: NREL-ATB-2025
+    notes: NMC-class. Installed incl BOP and integration; cell-level ~$110/kWh in 2025.
+  roundtrip_efficiency:
+    value: 0.86
+    range_low: 0.82
+    range_high: 0.90
+    unit: dimensionless
+    year: 2023
+    source: NREL-ATB-2024
+  lifetime_years:
+    value: 15
+    range_low: 10
+    range_high: 20
+    unit: years
+    year: 2023
+    source: NREL-ATB-2024
+
+h2_storage_compressed_350bar:
+  capex_per_kg:
+    value: 700
+    range_low: 500
+    range_high: 1200
+    unit: USD_per_kg_storage
+    year: 2023
+    source: DOE-H2atScale
+    notes: Type IV composite tanks; vehicle-scale.
+
+h2_storage_compressed_700bar:
+  capex_per_kg:
+    value: 1100
+    range_low: 800
+    range_high: 1800
+    unit: USD_per_kg_storage
+    year: 2023
+    source: DOE-H2atScale
+
+h2_storage_buffer_district:
+  capex_per_kg:
+    value: 450
+    range_low: 300
+    range_high: 700
+    unit: USD_per_kg_storage
+    year: 2023
+    source: DOE-H2atScale
+    notes: Stationary low-pressure (30-70 bar) buffer storage; per-kg cost falls with scale.
+
+aem_electrolyzer:
+  capex_per_kw:
+    value: 1300
+    range_low: 1000
+    range_high: 1900
+    unit: USD_per_kW
+    year: 2023
+    source: IEA-GHR-2024
+    notes: Anion-exchange membrane; PGM-free path. Pre-commercial at MW scale, TRL 6-7.
+  opex_per_kw_yr:
+    value: 50
+    range_low: 35
+    range_high: 75
+    unit: USD_per_kW_yr
+    year: 2023
+    source: IEA-GHR-2024
+  efficiency_lhv:
+    value: 0.58
+    range_low: 0.52
+    range_high: 0.65
+    unit: dimensionless
+    year: 2023
+    source: IEA-GHR-2024
+  stack_lifetime_hours:
+    value: 50000
+    range_low: 30000
+    range_high: 80000
+    unit: hours
+    year: 2023
+    source: IEA-GHR-2024
+    notes: Shorter than PEM/alkaline today; expected to converge as tech matures.
+  iridium_loading_g_per_kw:
+    value: 0.0
+    range_low: 0.0
+    range_high: 0.0
+    unit: g_per_kW
+    year: 2023
+    source: USGS-MCS-2025
+    notes: AEM is PGM-free by design; this is the substitution path under PGM shortage.
+
+lfp_battery_grid:
+  capex_per_kwh:
+    value: 250
+    range_low: 200
+    range_high: 350
+    unit: USD_per_kWh
+    year: 2025
+    source: NREL-ATB-2025
+    notes: LFP chemistry. No Co/Ni; lower energy density (~−25%) but safer, longer cycle life (~6000 cycles).
+  roundtrip_efficiency:
+    value: 0.88
+    range_low: 0.84
+    range_high: 0.92
+    unit: dimensionless
+    year: 2025
+    source: NREL-ATB-2025
+  lifetime_years:
+    value: 18
+    range_low: 12
+    range_high: 25
+    unit: years
+    year: 2025
+    source: NREL-ATB-2025
+
+na_ion_battery_grid:
+  capex_per_kwh:
+    value: 380
+    range_low: 280
+    range_high: 600
+    unit: USD_per_kWh
+    year: 2025
+    source: NREL-ATB-2025
+    notes: Sodium-ion; CATL/Northvolt commercial lines from 2025. Lithium-free; abundant Na supply. Premium today expected to converge on LFP by 2028.
+  roundtrip_efficiency:
+    value: 0.85
+    range_low: 0.80
+    range_high: 0.90
+    unit: dimensionless
+    year: 2025
+    source: IEA-CMO-2025
+  lifetime_years:
+    value: 15
+    range_low: 10
+    range_high: 20
+    unit: years
+    year: 2025
+    source: IEA-CMO-2025
+
+supply_shock:
+  iridium_price_multiplier_central:
+    value: 1.0
+    range_low: 1.0
+    range_high: 5.0
+    unit: dimensionless
+    year: 2024
+    source: USGS-MCS-2025
+    notes: Sensitivity multiplier on iridium-driven capex line. 5x is plausible during ZA supply disruption.
+  platinum_price_multiplier_central:
+    value: 1.0
+    range_low: 1.0
+    range_high: 3.0
+    unit: dimensionless
+    year: 2024
+    source: USGS-MCS-2025
+  pem_unavailable_capex_premium:
+    value: 0.20
+    range_low: 0.10
+    range_high: 0.40
+    unit: dimensionless
+    year: 2024
+    source: project-internal
+    notes: When PEM unavailable, alkaline/AEM substitute carries integration premium during crash transition.
+  lithium_price_multiplier_central:
+    value: 1.0
+    range_low: 0.7
+    range_high: 2.5
+    unit: dimensionless
+    year: 2024
+    source: USGS-MCS-2025
+    notes: Used to flex Li-ion buffer cost in shortage scenario.
+
+policy:
+  ira_45v_credit_per_kg:
+    value: 3.00
+    range_low: 0.60
+    range_high: 3.00
+    unit: USD_per_kg_H2
+    year: 2025
+    source: IRA-45V
+    notes: Tiered by lifecycle GHG; full $3 requires <0.45 kgCO2e/kgH2 and 3-pillar compliance.
+  eu_ets_carbon_price:
+    value: 80
+    range_low: 60
+    range_high: 150
+    unit: EUR_per_tCO2
+    year: 2024
+    source: EC-REPowerEU
+    notes: Sensitivity range; spot has been volatile.
+
+water:
+  electrolysis_water_use_l_per_kg_h2:
+    value: 22
+    range_low: 18
+    range_high: 30
+    unit: L_per_kg_H2
+    year: 2023
+    source: IEA-GHR-2024
+    notes: Stoichiometric ~9 L/kg; balance is purification + cooling.
+
+ghg:
+  h2_gwp100:
+    value: 11.6
+    range_low: 8.8
+    range_high: 14.4
+    unit: kgCO2e_per_kgH2_indirect
+    year: 2023
+    source: Sand-2023
+    notes: Used to compute indirect-forcing penalty when leakage > target.
+  leakage_target_fraction:
+    value: 0.01
+    range_low: 0.005
+    range_high: 0.03
+    unit: dimensionless
+    year: 2024
+    source: IEA-GHR-2024
+    notes: Project commits to <1% value-chain leakage.
+
+financial:
+  discount_rate_grant_funded:
+    value: 0.05
+    range_low: 0.03
+    range_high: 0.07
+    unit: dimensionless
+    year: 2024
+    source: NREL-ATB-2024
+    notes: Public-money cost-of-capital benchmark.
+  discount_rate_private:
+    value: 0.09
+    range_low: 0.07
+    range_high: 0.12
+    unit: dimensionless
+    year: 2024
+    source: NREL-ATB-2024
+
+reference_loads:
+  district_load_mw:
+    value: 2.0
+    range_low: 1.0
+    range_high: 5.0
+    unit: MW
+    year: 2024
+    source: project-internal
+  district_load_mwh_yr:
+    value: 17520
+    range_low: 8760
+    range_high: 43800
+    unit: MWh_per_yr
+    year: 2024
+    source: project-internal
+  truck_class8_kwh_per_km:
+    value: 1.6
+    range_low: 1.3
+    range_high: 2.2
+    unit: kWh_per_km
+    year: 2023
+    source: DOE-HD-FCEV
+    notes: At wheels; FCEV powertrain efficiency applied separately.
+  truck_class8_annual_km:
+    value: 160000
+    range_low: 100000
+    range_high: 200000
+    unit: km_per_yr
+    year: 2023
+    source: DOE-HD-FCEV

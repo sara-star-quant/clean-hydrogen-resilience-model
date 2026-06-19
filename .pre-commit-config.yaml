@@ -1,0 +1,65 @@
+# Pre-commit hooks for the electicity project.
+# Install once per clone: pip install pre-commit && pre-commit install && pre-commit install --hook-type pre-push
+# Manual run: pre-commit run --all-files
+
+default_language_version:
+  python: python3.14
+
+repos:
+  # Built-in trivial checks.
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        files: \.ya?ml$
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+
+  # Project-specific local hooks.
+  - repo: local
+    hooks:
+      - id: scan-non-ascii
+        name: scan customer-facing markdown for em-dashes and non-ASCII
+        entry: python3 docs/scan_non_ascii.py
+        language: system
+        pass_filenames: false
+        files: \.(md|html)$
+        stages: [pre-commit]
+
+      - id: tech-params-schema
+        name: validate tech_params.yaml schema
+        entry: bash -c 'cd model && .venv/bin/python -c "from electicity_model.tech import load_params; load_params()"'
+        language: system
+        pass_filenames: false
+        files: model/data/tech_params\.yaml$
+        stages: [pre-commit]
+
+      - id: pytest-fast
+        name: pytest (fast subset, no perf or regression)
+        entry: bash -c 'cd model && .venv/bin/pytest -q -m "not perf and not regression"'
+        language: system
+        pass_filenames: false
+        files: \.(py|yaml)$
+        stages: [pre-commit]
+
+      - id: pyright-strict
+        name: pyright strict
+        entry: bash -c '.venv-electicity/bin/pyright --project pyrightconfig.json 2>/dev/null || model/.venv/bin/pyright --project pyrightconfig.json'
+        language: system
+        pass_filenames: false
+        files: \.py$
+        stages: [pre-commit]
+
+      - id: pytest-full
+        name: pytest (full suite incl perf and regression)
+        entry: bash -c 'cd model && .venv/bin/pytest -q'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

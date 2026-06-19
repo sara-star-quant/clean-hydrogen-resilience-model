@@ -1,0 +1,83 @@
+# CI workflow for the electicity project.
+# Runs pytest (fast subset + perf), pyright strict, and the non-ASCII scanner on every
+# push and pull request to main. The workflow uses no untrusted-template-injected user
+# input in any run: block, so it is free of the standard workflow injection
+# vulnerability class.
+
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('model/pyproject.toml', 'model/requirements.lock') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: install
+        working-directory: model
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: pytest with coverage gate
+        working-directory: model
+        run: |
+          pytest -m 'not perf and not regression' \
+            --cov=electicity_model \
+            --cov-report=term \
+            --cov-fail-under=85
+
+      - name: pytest perf budgets
+        working-directory: model
+        run: pytest -m perf
+
+  pyright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: install package and pyright
+        working-directory: model
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+          pip install pyright
+
+      - name: pyright strict
+        run: pyright --project pyrightconfig.json
+
+  lint-non-ascii:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - name: scan markdown and playground for em-dash and non-ASCII residue
+        run: python3 docs/scan_non_ascii.py

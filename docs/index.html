@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Clean Hydrogen Resilience Model (Electicity): open techno-economic model for green-hydrogen microgrids and heavy-duty FCEV, with LCOE/LCOH/TCO and a supply-chain resilience simulation.">
+<title>Clean Hydrogen Resilience Model (Electicity)</title>
+<style>
+:root{
+  --bg:#0a0d12; --ink:#dde3ea; --mute:#8a93a0; --line:#222b36;
+  --panel:#10141b; --teal:#2db4aa; --amber:#d4a13a; --magenta:#d040a0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+header{padding:32px 24px;border-bottom:1px solid var(--line)}
+header h1{margin:0;font-family:"JetBrains Mono","Fira Code",monospace;font-size:22px;letter-spacing:0.5px}
+header h1 .accent{color:var(--teal)}
+header .tagline{color:var(--mute);margin-top:6px;font-size:14px}
+main{max-width:880px;margin:0 auto;padding:24px}
+section{margin:28px 0}
+section h2{font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:1.2px;color:var(--mute);text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:6px;margin:0 0 14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;margin-bottom:12px;transition:border-color .12s}
+.card:hover{border-color:var(--teal)}
+.card a{color:var(--teal);text-decoration:none;font-weight:600}
+.card a:hover{text-decoration:underline}
+.card .desc{color:var(--mute);font-size:14px;margin-top:6px}
+.disclaimer{background:#1a0f0f;border:1px solid #3a2a2a;color:var(--mute);font-size:13px;padding:14px 18px;border-radius:6px;margin:0 0 28px}
+.disclaimer strong{color:var(--ink)}
+ul{padding-left:20px}
+li{margin:6px 0}
+footer{padding:24px;border-top:1px solid var(--line);color:var(--mute);font-size:12px;text-align:center;margin-top:48px}
+@media (max-width:600px){
+  header{padding:22px 16px}
+  header h1{font-size:18px}
+  main{padding:16px}
+  .card{padding:14px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="accent">Clean Hydrogen Resilience Model</span> (Electicity)</h1>
+  <div class="tagline">Open techno-economic model for green-hydrogen microgrids and heavy-duty FCEV, with LCOE/LCOH/TCO and a supply-chain resilience simulation. Two reference units: a Class 8 fuel-cell-electric truck under one million USD, and a two megawatt district hybrid microgrid under thirty-six million USD.</div>
+</header>
+
+<main>
+
+<div class="disclaimer">
+  <strong>Disclaimer.</strong> Research and modelling output. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See <a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/DISCLAIMER.md">DISCLAIMER.md</a>.
+</div>
+
+<section>
+  <h2>Try the Microgrid Playground</h2>
+  <div class="card">
+    <a href="playground/microgrid_sim.html">Open the playground</a>
+    <div class="desc">A single-page browser sim. Build a microgrid, apply supply-shock profiles, run challenge scenarios. Numbers come from the same parameter database the Python model uses. No install required, no network calls.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Read the report</h2>
+  <div class="card">
+    <a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/tree/main/report">All chapters on GitHub</a>
+    <div class="desc">Twelve markdown chapters covering the problem, the technology landscape, both deployment tracks, economics, environmental analysis, risk, roadmap, the fringe-tech evidence appendix, supply resilience, and extreme-threat architecture with Zero Trust controls.</div>
+  </div>
+  <ul>
+    <li><a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/report/00_executive_summary.md">Executive summary</a></li>
+    <li><a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/report/01_problem_and_scope.md">Problem and scope</a></li>
+    <li><a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/report/04_district_track.md">District track</a></li>
+    <li><a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/report/05_economics_lcoe_tco.md">Economics: LCOE, LCOH, TCO</a></li>
+    <li><a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/report/10_supply_resilience_and_regions.md">Supply resilience and regions</a></li>
+    <li><a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/report/11_extreme_threats_and_zta_zte.md">Extreme threats and ZTA/ZTE</a></li>
+  </ul>
+</section>
+
+<section>
+  <h2>Investor and grant materials</h2>
+  <div class="card">
+    <a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/blob/main/investor_memo.md">Investor memo (template)</a>
+    <div class="desc">Worked-example memo with thesis, market sizing, unit economics, and risk register. Indicative only. Not a fundraising solicitation.</div>
+  </div>
+  <div class="card">
+    <a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/tree/main/grants">Grant proposal templates</a>
+    <div class="desc">Six skeletons: Horizon Europe Cluster 5, EU Innovation Fund, US ARPA-E, US DOE Hydrogen Programs, ARENA, and EECA / Callaghan / MBIE Endeavour.</div>
+  </div>
+</section>
+
+<section>
+  <h2>The model</h2>
+  <div class="card">
+    <a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model/tree/main/model">Python 3.14 cost-and-feasibility model</a>
+    <div class="desc">186 tests passing. 92 percent line coverage against an 85 percent gate. Pyright strict, zero errors. CLI subcommands for district, car, shock, regions, finance, render-all, summary, and package.</div>
+  </div>
+</section>
+
+<section>
+  <h2>License and reuse</h2>
+  <p style="color:var(--mute);font-size:14px">Code under Apache License 2.0. Documentation, prose, and the parameter database under Creative Commons Attribution 4.0 International. Cited third-party publications keep their own licences and are referenced by URL or DOI in the bibliography.</p>
+</section>
+
+</main>
+
+<footer>
+  Built and maintained at <a href="https://github.com/sara-star-quant/clean-hydrogen-resilience-model" style="color:var(--teal);text-decoration:none">github.com/sara-star-quant/clean-hydrogen-resilience-model</a>.
+</footer>
+
+</body>
+</html>

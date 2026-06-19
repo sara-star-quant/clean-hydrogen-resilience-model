@@ -1,0 +1,125 @@
+# Scenarios consumed by electicity_model.scenarios. Numbers reference tech_params.yaml.
+
+car_fcev_class8:
+  description: Class 8 regional drayage truck, FCEV powertrain. Reference vehicle.
+  segment: heavy_duty_truck
+  powertrain: fcev
+  fc_stack_kw: 100
+  battery_buffer_kwh: 45
+  h2_storage_kg: 50
+  h2_storage_pressure_bar: 700
+  h2_price_per_kg_low: 4.0
+  h2_price_per_kg_central: 6.0
+  h2_price_per_kg_high: 9.0
+  region: US
+
+car_bev_class8_ref:
+  description: Reference Class 8 BEV truck for comparison.
+  segment: heavy_duty_truck
+  powertrain: bev
+  battery_kwh: 800
+  electricity_price_per_mwh: 110
+  region: US
+
+car_diesel_class8_ref:
+  description: Reference Class 8 diesel truck for comparison.
+  segment: heavy_duty_truck
+  powertrain: ice_diesel
+  diesel_price_per_l: 1.05
+  diesel_l_per_km: 0.34
+  region: US
+
+district_solar_h2_inland:
+  description: Inland 2 MW district, solar PV + PEM electrolyzer + FC + Li-ion buffer.
+  load_mw: 2.0
+  solar_pv_mwp: 8.0
+  electrolyzer_mw: 3.0
+  electrolyzer_type: pem_electrolyzer
+  fuel_cell_mw: 1.5
+  h2_storage_kg: 12000
+  battery_buffer_mwh: 1.5
+  grid_import_allowed: true
+  grid_import_price_per_mwh: 95
+  region: US
+  policy_45v: true
+
+district_microhydro_river:
+  description: River-adjacent 2 MW district, micro-hydro primary + H2 backup.
+  load_mw: 2.0
+  micro_hydro_mw: 1.5
+  solar_pv_mwp: 3.0
+  electrolyzer_mw: 1.5
+  electrolyzer_type: alkaline_electrolyzer
+  fuel_cell_mw: 1.0
+  h2_storage_kg: 6000
+  battery_buffer_mwh: 1.0
+  grid_import_allowed: true
+  grid_import_price_per_mwh: 95
+  region: EU
+  policy_45v: false
+
+district_autonomy_max:
+  description: Survival stack. PGM-free, LFP-only, hand-startable. Costs more, survives more.
+  load_mw: 2.0
+  solar_pv_mwp: 8.5
+  electrolyzer_mw: 2.0
+  electrolyzer_type: alkaline_electrolyzer
+  fuel_cell_mw: 0.8
+  fuel_cell_type: sofc_chp
+  h2_storage_kg: 14000
+  battery_buffer_mwh: 2.0
+  battery_chemistry: lfp_battery_grid
+  biomass_backup_mw: 0.20
+  on_site_spares_premium: 0.10
+  control_premium: 0.04
+  grid_import_allowed: false
+  region: agnostic
+  policy_45v: false
+  resilience_target_grid_off_days: 180
+
+district_no_solar_no_wind:
+  description: Solar/wind degraded scenario. Geothermal + SMR + biomass + hydro mix.
+  load_mw: 2.0
+  geothermal_egs_mw: 1.5
+  micro_reactor_mw: 0.0  # off by default; enable in regions with nuclear acceptance
+  biomass_backup_mw: 0.50
+  electrolyzer_mw: 1.0
+  electrolyzer_type: alkaline_electrolyzer
+  fuel_cell_mw: 0.5
+  fuel_cell_type: sofc_chp
+  h2_storage_kg: 4000
+  battery_buffer_mwh: 2.0
+  battery_chemistry: lfp_battery_grid
+  grid_import_allowed: true
+  grid_import_price_per_mwh: 110
+  region: agnostic
+  policy_45v: false
+
+district_smr_baseload:
+  description: SMR-anchored district. For sites where geothermal absent and nuclear acceptable.
+  load_mw: 2.0
+  smr_nuclear_mw: 2.0
+  electrolyzer_mw: 0.5
+  electrolyzer_type: alkaline_electrolyzer
+  fuel_cell_mw: 0.0
+  battery_buffer_mwh: 1.0
+  battery_chemistry: lfp_battery_grid
+  grid_import_allowed: true
+  grid_import_price_per_mwh: 95
+  region: US
+  policy_45v: false
+
+district_tidal_coastal:
+  description: Coastal 2 MW district, tidal stream + solar + H2 backup.
+  load_mw: 2.0
+  tidal_mw: 1.0
+  solar_pv_mwp: 4.0
+  electrolyzer_mw: 2.0
+  electrolyzer_type: pem_electrolyzer
+  fuel_cell_mw: 1.0
+  h2_storage_kg: 8000
+  battery_buffer_mwh: 1.5
+  grid_import_allowed: true
+  grid_import_price_per_mwh: 110
+  region: EU
+  policy_45v: false

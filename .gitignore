@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated artifacts (regenerable via electicity render-all)
+deck/assets/*.png
+!deck/assets/.gitkeep
+model/_summary.json
+
+# Coverage and tooling
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.pyright/
+
+# Lockfile pin debug
+*.lock.tmp

@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this project or its data in academic work, please cite as below."
+title: "Clean Hydrogen Resilience Model (electicity): techno-economic feasibility and supply-chain resilience for green-hydrogen microgrids and heavy-duty FCEV"
+abstract: >-
+  electicity ships a Python cost-and-feasibility model, a research report,
+  six grant proposal templates, an investor memo, and a browser sim, all
+  oriented around two reference units: a Class 8 fuel-cell-electric truck
+  bench-validation under one million USD and a two megawatt district hybrid
+  microgrid under thirty-six million USD.
+authors:
+  - name: "SARA STAR QUANT LLC"
+    website: "https://github.com/sara-star-quant"
+date-released: "2026-06-19"
+version: "0.5.0"
+license: "Apache-2.0 AND CC-BY-4.0"
+license-url: "https://github.com/sara-star-quant/clean-hydrogen-resilience-model"
+repository-code: "https://github.com/sara-star-quant/clean-hydrogen-resilience-model"
+url: "https://github.com/sara-star-quant/clean-hydrogen-resilience-model"
+keywords:
+  - hydrogen
+  - electrolyzer
+  - fuel cell
+  - microgrid
+  - levelised cost of energy
+  - critical minerals
+  - supply resilience
+  - zero trust architecture
+  - heavy duty vehicle
+  - grant proposal
+type: software
+preferred-citation:
+  type: software
+  title: "Clean Hydrogen Resilience Model (electicity): techno-economic feasibility and supply-chain resilience for green-hydrogen microgrids and heavy-duty FCEV"
+  authors:
+    - name: "SARA STAR QUANT LLC"
+      website: "https://github.com/sara-star-quant"
+  year: 2026
+  version: "0.5.0"
+  url: "https://github.com/sara-star-quant/clean-hydrogen-resilience-model"
+  notes: >-
+    The project ships a model and a report. Citation is appreciated when this
+    repository informs the methodology of derivative work, or when the
+    parameter database is reused.

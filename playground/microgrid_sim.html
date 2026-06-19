@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ELECTICITY FEASIBILITY: Microgrid Playground</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root{
+    --bg:#0e1116;
+    --panel:#151b22;
+    --panel2:#1b232c;
+    --line:#283341;
+    --ink:#d6dfe9;
+    --mute:#7d8a99;
+    --teal:#3ed1b8;
+    --amber:#e6a23c;
+    --magenta:#d957a4;
+    --blue:#5ea0ef;
+    --warn:#ff6b6b;
+    --shadow:0 1px 0 #ffffff08, 0 6px 18px #00000080;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  body{min-height:100vh;display:flex;flex-direction:column}
+  h1,h2,h3,h4,.mono,code,.num{font-family:"JetBrains Mono","Menlo","Consolas",ui-monospace,monospace}
+  .topbar{display:flex;align-items:baseline;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#11161e,#0e1116)}
+  .topbar h1{margin:0;font-size:14px;letter-spacing:0.5px}
+  .topbar h1 .accent{color:var(--teal)}
+  .topbar .stamp{color:var(--mute);font-size:11px}
+  .topbar .ver{color:var(--magenta);font-size:11px;margin-left:auto;font-family:"JetBrains Mono",monospace}
+  .topbar .help-btn{background:transparent;border:1px solid var(--line);color:var(--mute);width:22px;height:22px;border-radius:50%;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1;margin-left:8px;padding:0}
+  .topbar .help-btn:hover{color:var(--teal);border-color:var(--teal)}
+  .layout{display:grid;grid-template-columns:280px 1fr 320px;gap:0;flex:1;min-height:0}
+  .col{padding:12px;overflow-y:auto;height:calc(100vh - 100px)}
+  .col.left{border-right:1px solid var(--line);background:#0c0f14}
+  .col.right{border-left:1px solid var(--line);background:#0c0f14}
+  .col.center{padding:16px 18px}
+  .section-h{font-size:10px;letter-spacing:1.5px;color:var(--mute);text-transform:uppercase;margin:6px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px;display:flex;align-items:center;gap:6px}
+  .tech-card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin-bottom:6px;cursor:pointer;transition:border-color .12s, transform .08s;position:relative}
+  .tech-card:hover{border-color:var(--teal)}
+  .tech-card:active{transform:translateY(1px)}
+  .tech-card .name{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink);display:flex;align-items:center;gap:6px}
+  .tech-card .meta{display:flex;justify-content:space-between;color:var(--mute);font-size:10.5px;margin-top:3px;font-family:"JetBrains Mono",monospace}
+  .tag{display:inline-block;font-size:9px;letter-spacing:1px;padding:1px 5px;border-radius:3px;text-transform:uppercase;margin-right:4px}
+  .tag.gen{background:#0d3a31;color:var(--teal)}
+  .tag.sto{background:#3a2a0d;color:var(--amber)}
+  .tag.h2{background:#3a0d2c;color:var(--magenta)}
+  .tag.cf{background:#0d2a3a;color:var(--blue)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px;position:relative}
+  .stat .lbl{font-size:9px;letter-spacing:1.5px;color:var(--mute);text-transform:uppercase;display:flex;align-items:center;gap:6px}
+  .stat .val{font-family:"JetBrains Mono",monospace;font-size:18px;margin-top:4px}
+  .stat .sub{font-size:10px;color:var(--mute);margin-top:2px;font-family:"JetBrains Mono",monospace}
+  .ok{color:var(--teal)}.warn{color:var(--amber)}.bad{color:var(--magenta)}
+  .progress{height:4px;background:#222b36;border-radius:2px;overflow:hidden;margin-top:8px}
+  .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));transition:width .3s, background .3s}
+  .progress.warn > i{background:linear-gradient(90deg,var(--amber),var(--magenta))}
+  .progress.bad > i{background:var(--magenta)}
+  .build{background:var(--panel);border:1px solid var(--line);border-radius:6px;min-height:200px;padding:6px}
+  .build .empty{text-align:center;color:var(--mute);padding:60px 12px;font-style:italic}
+  .comp{display:grid;grid-template-columns:1fr auto;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line);align-items:center}
+  .comp:last-child{border-bottom:none}
+  .comp .name{font-family:"JetBrains Mono",monospace;font-size:12px}
+  .comp .sub{color:var(--mute);font-size:10.5px;font-family:"JetBrains Mono",monospace}
+  .comp .controls{display:flex;align-items:center;gap:8px}
+  .comp .cap{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--blue);min-width:75px;text-align:right}
+  .comp input[type=range]{width:160px;accent-color:var(--teal)}
+  .comp button.rm{background:transparent;border:1px solid var(--line);color:var(--mute);width:22px;height:22px;border-radius:3px;cursor:pointer;font-size:14px;line-height:1}
+  .comp button.rm:hover{color:var(--magenta);border-color:var(--magenta)}
+  .narrator{background:#0a0d12;border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:6px;padding:10px 14px;margin-top:14px;font-size:12px;min-height:48px}
+  .narrator.warn{border-left-color:var(--amber)}
+  .narrator.bad{border-left-color:var(--magenta)}
+  .narrator .ts{color:var(--mute);font-size:10px;font-family:"JetBrains Mono",monospace;margin-bottom:4px}
+  .shock-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:10px}
+  .shock-grid .shock-cell, .preset-grid .preset-cell{position:relative}
+  .shock-grid button, .preset-grid button{background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:7px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:10.5px;cursor:pointer;text-align:left;transition:all .12s;width:100%}
+  .shock-grid button:hover, .preset-grid button:hover{border-color:var(--amber);color:var(--amber)}
+  .shock-grid button.active{background:#3a2a0d;border-color:var(--amber);color:var(--amber)}
+  .shock-grid button.bau.active{background:#0d3a31;border-color:var(--teal);color:var(--teal)}
+  .preset-grid{display:grid;grid-template-columns:1fr;gap:5px;margin-bottom:12px}
+  .preset-grid button:hover{border-color:var(--blue);color:var(--blue)}
+  .preset-grid button .pdesc{display:block;color:var(--mute);font-size:9.5px;margin-top:2px}
+  .toggle{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);padding:7px 10px;border-radius:4px;margin-bottom:8px;cursor:pointer;user-select:none}
+  .toggle input{accent-color:var(--teal)}
+  .toggle .label{font-size:11px}
+  .toggle .desc{color:var(--mute);font-size:10px;display:block}
+  .challenge-box{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px;margin-top:8px;display:none}
+  .challenge-box.on{display:block}
+  .challenge-box .title{font-family:"JetBrains Mono",monospace;color:var(--magenta);font-size:11px;margin-bottom:6px;letter-spacing:0.5px;display:flex;align-items:center;gap:6px}
+  .challenge-box .obj{font-size:11px;line-height:1.5;color:var(--ink)}
+  .challenge-box .obj ul{margin:4px 0 0 14px;padding:0}
+  .challenge-box .desc-line{color:var(--mute);margin-bottom:6px}
+  .challenge-box .score-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;font-family:"JetBrains Mono",monospace;font-size:10.5px}
+  .challenge-box .score-row .k{color:var(--mute)}
+  .challenge-box .verdict{margin-top:8px;padding:6px 8px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:11px;text-align:center}
+  .verdict.pass{background:#0d3a31;color:var(--teal)}
+  .verdict.fail{background:#3a0d2c;color:var(--magenta)}
+  .nextch{background:transparent;border:1px solid var(--line);color:var(--mute);padding:4px 8px;font-size:10px;border-radius:3px;cursor:pointer;font-family:"JetBrains Mono",monospace;margin-top:6px}
+  .nextch:hover{color:var(--blue);border-color:var(--blue)}
+  .footer{padding:8px 18px;border-top:1px solid var(--line);color:var(--mute);font-size:10.5px;background:#0a0d12;font-family:"JetBrains Mono",monospace}
+  .footer .canon{color:var(--blue)}
+  .col::-webkit-scrollbar{width:8px}
+  .col::-webkit-scrollbar-thumb{background:#222b36;border-radius:4px}
+  .col::-webkit-scrollbar-track{background:transparent}
+  .pill{display:inline-block;padding:1px 6px;border-radius:9px;background:#222b36;color:var(--mute);font-size:9.5px;letter-spacing:0.5px;font-family:"JetBrains Mono",monospace}
+  .pill.act{background:var(--magenta);color:#000}
+  .row-line{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--mute);margin:2px 0}
+  .row-line span:last-child{color:var(--ink)}
+
+  /* Info icon + tooltip (click-to-pin) */
+  .info-icon{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;border:1px solid var(--mute);color:var(--mute);background:transparent;cursor:pointer;flex:0 0 auto;padding:0;vertical-align:middle}
+  .info-icon:hover{color:var(--teal);border-color:var(--teal)}
+  .info-icon:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+  .info-icon[aria-expanded="true"]{color:var(--teal);border-color:var(--teal);background:#0d3a31}
+  .info-icon svg{width:10px;height:10px;display:block}
+  .info-wrap{position:relative;display:inline-flex;align-items:center}
+  /* Floating tooltip */
+  .info-pop{position:fixed;z-index:300;background:#0a0d12;color:var(--ink);border:1px solid var(--teal);border-radius:6px;box-shadow:var(--shadow);font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.55;text-align:left;width:min(420px,calc(100vw - 32px));max-width:min(420px,calc(100vw - 32px));max-height:min(80vh,720px);display:none;flex-direction:column;overflow:hidden}
+  .info-pop.open{display:flex}
+  @media (prefers-reduced-motion: no-preference){.info-pop.open{animation:info-fade .12s ease-out}}
+  @keyframes info-fade{from{opacity:0;transform:translateY(-2px)}to{opacity:1;transform:none}}
+  .info-pop .info-head{position:sticky;top:0;display:flex;align-items:center;gap:8px;padding:8px 10px;background:#0c1118;border-bottom:1px solid var(--line);flex:0 0 auto}
+  .info-pop .info-title{flex:1;color:var(--teal);font-size:12px;letter-spacing:0.4px;font-weight:normal;margin:0;white-space:normal;overflow:visible;text-overflow:clip;word-break:break-word}
+  .info-pop .info-close{background:transparent;border:1px solid var(--line);color:var(--mute);width:22px;height:22px;border-radius:3px;cursor:pointer;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1;padding:0;flex:0 0 auto}
+  .info-pop .info-close:hover{color:var(--magenta);border-color:var(--magenta)}
+  .info-pop .info-close:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+  .info-pop .info-body{padding:10px 12px;overflow-y:auto;flex:1 1 auto;font-size:14px;line-height:1.55}
+  .info-pop .info-body div{margin-bottom:4px}
+  .info-pop .info-body div:last-child{margin-bottom:0}
+  .info-pop .info-body p{margin:0 0 6px}
+  .info-pop .info-body p:last-child{margin-bottom:0}
+  .info-pop b{color:var(--teal);font-weight:normal;letter-spacing:0.4px}
+  .info-pop .info-body .kw{color:var(--teal);font-weight:600}
+  .info-pop .info-body .num{font-variant-numeric:tabular-nums;color:var(--amber);font-weight:600}
+  .info-pop .info-body .tip{display:block;margin:6px 0 0;padding:8px 10px;border-left:3px solid var(--teal);background:rgba(40,180,170,0.08);border-radius:4px}
+  .info-pop .info-body .warn{display:block;margin:6px 0 0;padding:8px 10px;border-left:3px solid var(--magenta);background:rgba(220,80,160,0.08);border-radius:4px}
+  .info-pop .row{display:flex;justify-content:space-between;color:var(--mute);gap:8px}
+  .info-pop .row span:last-child{color:var(--ink)}
+  /* Arrow */
+  .info-pop .info-arrow{position:absolute;width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent}
+  .info-pop.below .info-arrow{top:-7px;border-bottom:7px solid var(--teal)}
+  .info-pop.above .info-arrow{bottom:-7px;border-top:7px solid var(--teal)}
+  /* Hover preview (small, transient, never blocks) */
+  .info-preview{position:fixed;z-index:299;background:#0a0d12;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:6px 8px;font-family:"JetBrains Mono",monospace;font-size:11px;line-height:1.45;max-width:260px;pointer-events:none;display:none;box-shadow:var(--shadow)}
+  .info-preview.on{display:block}
+  @media (prefers-reduced-motion: reduce){.info-pop.open{animation:none}}
+
+  /* ---------- Mobile and narrow-viewport responsiveness ---------- */
+  /* Up to tablet width: collapse to a single scrollable column. The three
+     panels become stacked sections rather than fixed-width sidebars. Each
+     panel keeps its own header and is fully tappable. */
+  @media (max-width: 900px){
+    .layout{grid-template-columns:1fr; height:auto}
+    .col{height:auto; max-height:none; border:none; padding:14px 12px}
+    .col.left{border-bottom:1px solid var(--line)}
+    .col.right{border-top:1px solid var(--line)}
+    .col.center{padding:14px 12px}
+    .stats{grid-template-columns:repeat(2, 1fr)}
+    .shock-grid{grid-template-columns:1fr 1fr}
+    .preset-grid{grid-template-columns:1fr}
+    .topbar{flex-wrap:wrap; padding:8px 10px}
+    .topbar h1{font-size:13px}
+    .topbar .stamp,.topbar .ver{font-size:10px}
+  }
+
+  /* Phone width: tighter still. Single-column stats. Bigger tap targets. */
+  @media (max-width: 600px){
+    .stats{grid-template-columns:1fr}
+    .shock-grid{grid-template-columns:1fr}
+    .tech-card{padding:11px 12px}
+    .tech-card .name{font-size:13px}
+    .tech-card .meta{font-size:11.5px}
+    .stat{padding:12px}
+    .stat .lbl{font-size:11px}
+    .stat .val{font-size:18px}
+    button, .info-icon{min-height:32px; min-width:32px}
+    .info-icon{width:18px; height:18px; font-size:12px}
+    .info-pop{font-size:13.5px; line-height:1.55}
+    .modal{width:96vw; max-width:96vw}
+  }
+
+  /* Hover-only affordances become tap affordances on touch devices. */
+  @media (hover: none){
+    .tech-card:hover{border-color:var(--line)}
+    .tech-card:active{border-color:var(--teal); background:#0e1218}
+  }
+
+  /* Diplomacy / Friends Union */
+  .alliance-grid{display:grid;grid-template-columns:1fr;gap:5px;margin-bottom:8px}
+  .alliance-card{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:7px 9px;cursor:pointer;transition:all .12s;display:flex;flex-direction:column;gap:2px;position:relative}
+  .alliance-card:hover{border-color:var(--blue)}
+  .alliance-card.on{background:#0d2a3a;border-color:var(--blue)}
+  .alliance-card.on .a-name{color:var(--blue)}
+  .alliance-card .a-name{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:6px}
+  .alliance-card .a-cost{color:var(--amber);font-family:"JetBrains Mono",monospace;font-size:10px}
+  .alliance-card .a-desc{color:var(--mute);font-size:10px;line-height:1.35}
+  .union-pill{display:inline-block;padding:1px 6px;border-radius:9px;background:#222b36;color:var(--mute);font-size:9.5px;letter-spacing:0.5px;font-family:"JetBrains Mono",monospace}
+  .union-pill.on{background:var(--teal);color:#000}
+
+  /* Shock outlook board */
+  .outlook{display:flex;flex-direction:column;gap:3px;margin-bottom:6px}
+  .outlook-bar{display:grid;grid-template-columns:90px 1fr 44px;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--mute)}
+  .outlook-bar .label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .outlook-bar .pct{text-align:right;color:var(--ink)}
+  .outlook-bar .track{height:8px;background:#222b36;border-radius:2px;overflow:hidden}
+  .outlook-bar .track > i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--magenta));transition:width .25s}
+  .outlook-bar.bau .track > i{background:linear-gradient(90deg,var(--teal),var(--blue))}
+
+  /* Synergy / friction list under alliance grid */
+  .syn-list{margin-top:6px;font-family:"JetBrains Mono",monospace;font-size:10px;display:flex;flex-direction:column;gap:2px}
+  .syn-list .syn-empty{color:var(--mute);font-style:italic}
+  .syn-list .syn-summary{color:var(--mute)}
+  .syn-list .syn-line.good{color:var(--teal)}
+  .syn-list .syn-line.bad{color:var(--magenta)}
+
+  /* Campaign panel */
+  .campaign-box{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px;margin-top:8px;display:none}
+  .campaign-box.on{display:block}
+  .campaign-box .title{font-family:"JetBrains Mono",monospace;color:var(--blue);font-size:11px;margin-bottom:6px;letter-spacing:0.5px}
+  .campaign-box .camp-clock{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--mute);margin-bottom:6px}
+  .campaign-box .camp-card{background:#0a0d12;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:4px;padding:8px 10px;font-size:11px;line-height:1.45;margin-bottom:6px;min-height:48px}
+  .campaign-box .camp-card .ct-title{color:var(--blue);font-family:"JetBrains Mono",monospace;font-size:11px;margin-bottom:4px}
+  .campaign-box .camp-card .ct-body{color:var(--ink);font-size:11px}
+  .campaign-box .camp-actions{display:flex;gap:6px;margin-bottom:8px}
+  .campaign-box .camp-actions button{flex:1;font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:6px 8px;border-radius:3px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+  .campaign-box .camp-actions button:disabled{opacity:0.45;cursor:not-allowed}
+  .campaign-box .camp-actions button.primary-btn{border-color:var(--teal);color:var(--teal)}
+  .campaign-box .camp-actions button.primary-btn:hover:not(:disabled){background:#0d3a31}
+  .campaign-box .camp-actions button.secondary-btn:hover:not(:disabled){border-color:var(--magenta);color:var(--magenta)}
+  .campaign-box .camp-history{font-family:"JetBrains Mono",monospace;font-size:10px;display:flex;flex-direction:column;gap:3px}
+  .campaign-box .camp-history .h-row{display:grid;grid-template-columns:38px 1fr 60px;gap:6px;color:var(--mute);padding:3px 0;border-bottom:1px dashed var(--line)}
+  .campaign-box .camp-history .h-row .y{color:var(--blue)}
+  .campaign-box .camp-history .h-row .s{color:var(--ink);text-align:right}
+  .campaign-box .camp-final{margin-top:8px;padding:6px 8px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:11px;text-align:center;background:#0d3a31;color:var(--teal);border:1px solid var(--teal)}
+
+  /* Leaderboard */
+  .leaderboard{display:flex;flex-direction:column;gap:3px}
+  .leaderboard .lb-empty{font-size:11px;color:var(--mute);padding:4px 0}
+  .leaderboard .lb-row{display:grid;grid-template-columns:30px 52px 1fr auto;gap:6px;align-items:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:3px 0;border-bottom:1px dashed var(--line)}
+  .leaderboard .lb-row .lb-rank{color:var(--mute)}
+  .leaderboard .lb-row .lb-score{color:var(--teal);text-align:right}
+  .leaderboard .lb-row .lb-name{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .leaderboard .lb-row .lb-load{font-family:"JetBrains Mono",monospace;font-size:10px;padding:2px 8px;border-radius:3px;border:1px solid var(--line);background:var(--panel);color:var(--blue);cursor:pointer}
+  .leaderboard .lb-row .lb-load:hover{border-color:var(--blue)}
+
+  /* Self-test red banner */
+  .selftest-banner{position:fixed;top:0;left:0;right:0;background:#3a0d2c;color:#ffd6ec;padding:10px 14px;font-family:"JetBrains Mono",monospace;font-size:12px;z-index:1000;border-bottom:2px solid var(--magenta);text-align:center}
+
+  /* Region select + export */
+  .region-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:11px}
+  .region-row select{flex:1;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:5px 6px;font-family:"JetBrains Mono",monospace;font-size:10.5px}
+  .export-btn{background:var(--panel);color:var(--teal);border:1px solid var(--teal);padding:6px 10px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:10.5px;cursor:pointer;margin-top:6px}
+  .export-btn:hover{background:#0d3a31}
+
+  /* Modal */
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:200}
+  .modal-bg.on{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--teal);border-radius:8px;width:560px;max-width:92vw;max-height:88vh;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .modal h2{margin:0;padding:14px 18px;font-size:14px;border-bottom:1px solid var(--line);color:var(--teal);letter-spacing:0.5px}
+  .modal .tabs{display:flex;border-bottom:1px solid var(--line);background:#0c0f14}
+  .modal .tab{flex:1;padding:9px 8px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--mute);background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;text-align:center}
+  .modal .tab:hover{color:var(--ink)}
+  .modal .tab.active{color:var(--teal);border-bottom-color:var(--teal)}
+  .modal .body{padding:16px 20px;font-size:12.5px;line-height:1.6;overflow-y:auto;max-height:50vh}
+  .modal .body p{margin:0 0 10px}
+  .modal .body ul{margin:0 0 10px 18px;padding:0}
+  .modal .body li{margin-bottom:4px}
+  .modal .body code{background:#0a0d12;padding:1px 4px;border-radius:3px;color:var(--blue);font-size:11.5px}
+  .modal .body h3{margin:14px 0 8px;font-size:12px;color:var(--teal);letter-spacing:0.5px;text-transform:uppercase}
+  .modal .body h3:first-child{margin-top:0}
+  .modal .body .callout{background:#0a0d12;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:6px;padding:12px 14px;margin:0 0 14px;font-size:13px;line-height:1.55;color:var(--ink)}
+  .modal .body .tip{background:#0d3a31;border:1px solid var(--teal);border-radius:6px;padding:10px 14px;margin:12px 0 4px;font-size:12px;line-height:1.55;color:var(--ink)}
+  .modal .body .tip b{color:var(--teal);letter-spacing:0.4px}
+  .modal .body .examples{list-style:none;margin:0 0 10px;padding:0}
+  .modal .body .examples li{margin-bottom:8px;padding-left:22px;position:relative}
+  .modal .body .examples li .mark{position:absolute;left:0;top:0;color:var(--teal);font-family:"JetBrains Mono",monospace;font-weight:bold}
+  .modal .body ul.spaced li{margin-bottom:6px}
+  .modal .body .watch{margin:0 0 10px}
+  .modal .body .watch li b{color:var(--blue);letter-spacing:0.3px}
+  .modal .actions{display:flex;justify-content:flex-end;gap:8px;padding:12px 18px;border-top:1px solid var(--line);background:#0c0f14}
+  .modal .actions button{font-family:"JetBrains Mono",monospace;font-size:11px;padding:7px 12px;border-radius:4px;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+  .modal .actions .primary{border-color:var(--teal);color:var(--teal)}
+  .modal .actions .primary:hover{background:#0d3a31}
+  .modal .actions .secondary:hover{border-color:var(--blue);color:var(--blue)}
+  .modal .actions .danger:hover{border-color:var(--magenta);color:var(--magenta)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1><span class="accent">ELECTICITY FEASIBILITY</span>: Microgrid Playground</h1>
+  <span class="stamp">params snapshot 2026-05  -  USD nominal, source years 2023 to 2025</span>
+  <span class="info-host" data-info-id="params-snapshot"></span>
+  <button class="help-btn" id="helpBtn" title="open onboarding">?</button>
+  <span class="ver">v0.4.0 | build 2026-05-05</span>
+</div>
+
+<div class="layout">
+
+  <div class="col left">
+    <div class="section-h">Tech catalog <span class="info-host" data-info-id="tech-catalog"></span></div>
+    <div id="catalog"></div>
+    <div class="section-h" style="margin-top:14px">Site settings <span class="info-host" data-info-id="site-params"></span></div>
+    <div class="row-line"><span>town demand</span><span>2.0 MW</span></div>
+    <div class="row-line"><span>hours per year</span><span>8760</span></div>
+    <div class="row-line"><span>interest rate</span><span>7%</span></div>
+    <div class="row-line"><span>extra build cost</span><span>20%</span></div>
+    <div class="row-line"><span>budget cap</span><span>$36.0M</span></div>
+    <div class="section-h" style="margin-top:14px">Region <span class="info-host" data-info-id="region"></span></div>
+    <div class="region-row">
+      <select id="regionSelect">
+        <option value="">Not selected</option>
+        <option value="Iberian Peninsula (EU)">Iberian Peninsula (EU)</option>
+        <option value="Pacific NW (US)">Pacific NW (US)</option>
+        <option value="Tasmania (AU)">Tasmania (AU)</option>
+        <option value="South Island (NZ)">South Island (NZ)</option>
+        <option value="Norway fjords (EU EFTA)">Norway fjords (EU EFTA)</option>
+        <option value="Pilbara WA (AU, water-stressed)">Pilbara WA (AU, water-stressed)</option>
+        <option value="New Mexico (US, water-stressed)">New Mexico (US, water-stressed)</option>
+        <option value="Texas Permian (US, water-stressed)">Texas Permian (US, water-stressed)</option>
+        <option value="Other (specify)">Other (specify)</option>
+      </select>
+    </div>
+    <div class="section-h" style="margin-top:14px">Friends Union <span class="info-host" data-info-id="friends-union"></span></div>
+    <div id="alliances" class="alliance-grid"></div>
+    <div class="row-line"><span>Diplomacy spend</span><span id="diplomacySpend">$0.00M</span></div>
+    <div class="row-line"><span>Sovereignty</span><span id="sovSpend">0 / 10</span></div>
+    <div class="progress" id="sovBar"><i style="width:0%"></i></div>
+    <div class="row-line" style="margin-top:6px"><span>Friends Union</span><span id="friendsUnionState">inactive</span></div>
+    <div id="synergyList" class="syn-list"></div>
+  </div>
+
+  <div class="col center">
+    <div class="stats">
+      <div class="stat">
+        <div class="lbl">Build cost <span class="info-host" data-info-id="metric-capex"></span></div>
+        <div class="val" id="capexVal">$0.00M</div>
+        <div class="sub" id="capexSub">includes 20% extra | budget $36M</div>
+        <div class="progress" id="capexBar"><i style="width:0%"></i></div>
+      </div>
+      <div class="stat">
+        <div class="lbl">Price per unit of power <span class="info-host" data-info-id="metric-lcoe"></span></div>
+        <div class="val" id="lcoeVal">- $/MWh</div>
+        <div class="sub" id="lcoeSub">average over project life</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">Price per kilo of hydrogen <span class="info-host" data-info-id="metric-lcoh"></span></div>
+        <div class="val" id="lcohVal">- $/kg</div>
+        <div class="sub" id="lcohSub">needs an electrolyzer plus power</div>
+      </div>
+      <div class="stat">
+        <div class="lbl">Lights stay on <span class="info-host" data-info-id="metric-avail"></span></div>
+        <div class="val" id="availVal">-%</div>
+        <div class="sub" id="availSub">share of hours covered</div>
+        <div class="progress" id="availBar"><i style="width:0%"></i></div>
+      </div>
+    </div>
+
+    <div class="section-h">Your build <span id="shockPill" class="pill" style="float:right">shock: bau</span></div>
+    <div class="build" id="build"></div>
+
+    <div style="margin-top:8px">
+      <button class="export-btn" id="exportBtn">Export results to a text file</button>
+      <button class="export-btn" id="shareBtn">Copy share link</button>
+    </div>
+
+    <div class="narrator" id="narrator"></div>
+  </div>
+
+  <div class="col right">
+    <div class="section-h">Shock outlook</div>
+    <div id="shockOutlook" class="outlook"></div>
+
+    <div class="section-h" style="margin-top:14px">Surprise events <span class="info-host" data-info-id="supply-shocks"></span></div>
+    <div class="shock-grid" id="shocks"></div>
+
+    <div class="section-h" style="margin-top:14px">Ready-made designs <span class="info-host" data-info-id="scenario-presets"></span></div>
+    <div class="preset-grid" id="presets"></div>
+
+    <div class="section-h" style="margin-top:14px">Extra options</div>
+    <label class="toggle">
+      <input type="checkbox" id="ztaToggle">
+      <span><span class="label">Cyber safety on <span class="info-host" data-info-id="ctrl-zta"></span></span><span class="desc">enables a Zero Trust Architecture posture for a small reliability bonus</span></span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" id="critOnly">
+      <span><span class="label">Power only the essentials <span class="info-host" data-info-id="ctrl-critonly"></span></span><span class="desc">keep hospitals and pumps on, drop the rest</span></span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" id="challengeMode">
+      <span><span class="label">Challenge mode <span class="info-host" data-info-id="ctrl-challenge"></span></span><span class="desc">turn the playground into a scored game</span></span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" id="campaignMode">
+      <span><span class="label">Campaign mode (5 years)</span><span class="desc">play a multi-year run with decision cards and stochastic shocks</span></span>
+    </label>
+
+    <div class="challenge-box" id="challengeBox">
+      <div class="title" id="chTitle">-</div>
+      <div class="obj" id="chObjectives"></div>
+      <div class="score-row" id="chMetrics"></div>
+      <div class="verdict" id="chVerdict" style="display:none"></div>
+      <button class="nextch" id="chNext">[ try the next challenge ]</button>
+    </div>
+
+    <div class="campaign-box" id="campaignBox">
+      <div class="title" id="campTitle">Campaign</div>
+      <div class="camp-clock" id="campClock">Year 0 / 5 | Total score 0</div>
+      <div class="camp-card" id="campCard"></div>
+      <div class="camp-actions">
+        <button class="primary-btn" id="campAccept" disabled>Accept</button>
+        <button class="secondary-btn" id="campDecline" disabled>Decline</button>
+        <button class="primary-btn" id="campEndYear" disabled>End year</button>
+      </div>
+      <div class="camp-history" id="campHistory"></div>
+    </div>
+
+    <div class="section-h" style="margin-top:14px">Leaderboard</div>
+    <div id="leaderboard" class="leaderboard"></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  These numbers are for learning. The exact values live in <span class="canon">/model/data/tech_params.yaml</span>. The full Python model is the real calculator. This page is a teaching tool.
+</div>
+
+<!-- Global info tooltip (click-to-pin) -->
+<div class="info-pop" id="infoPop" role="dialog" aria-modal="false" aria-labelledby="infoPopTitle" aria-hidden="true">
+  <div class="info-arrow" aria-hidden="true"></div>
+  <div class="info-head">
+    <h3 class="info-title" id="infoPopTitle">Info</h3>
+    <button type="button" class="info-close" id="infoPopClose" aria-label="Close tooltip">x</button>
+  </div>
+  <div class="info-body" id="infoPopBody" tabindex="0"></div>
+</div>
+<div class="info-preview" id="infoPreview" aria-hidden="true"></div>
+
+<!-- Onboarding modal -->
+<div class="modal-bg" id="onboardModal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <h2>Welcome to ELECTICITY FEASIBILITY: Microgrid Playground</h2>
+    <div class="tabs" id="onboardTabs">
+      <button class="tab active" data-tab="what">What is this</button>
+      <button class="tab" data-tab="how">How to play</button>
+      <button class="tab" data-tab="score">How scores work</button>
+    </div>
+    <div class="body" id="onboardBody"></div>
+    <div class="actions">
+      <button class="danger" id="onboardNever">Do not show this again</button>
+      <button class="secondary" id="onboardLater">Show again later</button>
+      <button class="primary" id="onboardOK">Got it</button>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="diplomacy-constants">
+{
+  "version": 1,
+  "blocs": {
+    "EU_FRIEND": {
+      "label": "EU FRIEND",
+      "desc": "EU + EFTA. RFNBO compliance, Innovation Fund eligibility, alkaline OEMs (Sunfire DE, McPhy FR).",
+      "cost": 700000,
+      "sovereignty": 1,
+      "damping": { "western_only": 0.40, "regional_autarky": 0.10 },
+      "bonus": { "lcoh_mult": 0.95 },
+      "prob_delta": { "western_only": -0.04, "regional_autarky": 0.02 }
+    },
+    "WEST_FRIEND": {
+      "label": "WEST FRIEND",
+      "desc": "US + Canada + UK. 45V PTC, DPA Title III, Plug Power and First Solar OEMs.",
+      "cost": 800000,
+      "sovereignty": 1,
+      "damping": { "western_only": 0.60, "china_decoupling": 0.25, "regional_autarky": 0.10 },
+      "bonus": { "ptc_capex_rebate_pct": 0.05 },
+      "prob_delta": { "china_decoupling": 0.05, "western_only": -0.04 }
+    },
+    "EAST_FRIEND": {
+      "label": "EAST FRIEND",
+      "desc": "China + Japan + Korea. Solar cells, Li-ion processing, battery OEMs.",
+      "cost": 1200000,
+      "sovereignty": 2,
+      "damping": { "china_decoupling": 0.60, "maritime_blockade": 0.30, "li_shortage": 0.30, "pt_shortage": 0.20 },
+      "bonus": { "tech_capex_mult": { "solar_pv_utility": 0.92, "li_ion_battery_grid": 0.92, "lfp_battery_grid": 0.92 } },
+      "prob_delta": { "china_decoupling": -0.06, "maritime_blockade": -0.03 }
+    },
+    "SOUTH_CENTRAL_FRIEND": {
+      "label": "SOUTH-CENTRAL FRIEND",
+      "desc": "Australia + India + ASEAN. Lithium mining (AU), processing (IN), Indo-Pacific routes.",
+      "cost": 1400000,
+      "sovereignty": 2,
+      "damping": { "li_shortage": 0.35, "regional_autarky": 0.30, "maritime_blockade": 0.25 },
+      "bonus": { "availability_add": 0.05 },
+      "prob_delta": { "li_shortage": -0.04, "maritime_blockade": -0.02 }
+    },
+    "NORTH_FRIEND": {
+      "label": "NORTH FRIEND",
+      "desc": "Norway + Iceland + Greenland. Hydro firming, alkaline electrolyzer OEMs (Nel ASA).",
+      "cost": 1600000,
+      "sovereignty": 1,
+      "damping": { "ir_shortage": 0.40, "regional_autarky": 0.20, "pt_shortage": 0.15 },
+      "bonus": { "tech_capex_mult": { "alkaline_electrolyzer": 0.95 } },
+      "prob_delta": { "ir_shortage": -0.02 }
+    },
+    "AFRICA_FRIEND": {
+      "label": "AFRICA FRIEND",
+      "desc": "South Africa + Morocco + DRC. PGM (iridium, platinum), cobalt, phosphate, uranium.",
+      "cost": 1500000,
+      "sovereignty": 2,
+      "damping": { "ir_shortage": 0.50, "pt_shortage": 0.50, "regional_autarky": 0.20 },
+      "bonus": { "tech_opex_mult": { "pem_electrolyzer": 0.85, "pem_fuel_cell_stationary": 0.85 } },
+      "prob_delta": { "ir_shortage": -0.03, "pt_shortage": -0.03 }
+    },
+    "LATAM_FRIEND": {
+      "label": "LATAM FRIEND",
+      "desc": "Chile + Argentina + Brazil. Lithium triangle, copper, near-shoring to US and Canada.",
+      "cost": 1000000,
+      "sovereignty": 1,
+      "damping": { "li_shortage": 0.30, "regional_autarky": 0.15 },
+      "bonus": { "tech_capex_mult": { "li_ion_battery_grid": 0.90, "lfp_battery_grid": 0.90 } },
+      "prob_delta": { "li_shortage": -0.03 }
+    }
+  },
+  "blocRelations": [
+    ["AFRICA_FRIEND", "EU_FRIEND", 0.10],
+    ["EAST_FRIEND", "SOUTH_CENTRAL_FRIEND", 0.05],
+    ["EAST_FRIEND", "WEST_FRIEND", -0.20],
+    ["EU_FRIEND", "NORTH_FRIEND", 0.10],
+    ["EU_FRIEND", "WEST_FRIEND", -0.10],
+    ["LATAM_FRIEND", "WEST_FRIEND", 0.10]
+  ],
+  "shockBaseProb": {
+    "bau": 0.30,
+    "ir_shortage": 0.06,
+    "pt_shortage": 0.06,
+    "li_shortage": 0.10,
+    "china_decoupling": 0.14,
+    "triple_squeeze": 0.06,
+    "western_only": 0.08,
+    "maritime_blockade": 0.10,
+    "regional_autarky": 0.10
+  },
+  "sovereigntyMax": 10
+}
+</script>
+<script src="microgrid_sim.js"></script>
+
+</body>
+</html>
