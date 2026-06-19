@@ -10,7 +10,7 @@
 
 *Indicative template. Not a fundraising solicitation. Numbers are scenario outputs, not forecasts.*
 
-ELECTICITY is two tracks on one financial spine. The idea is plain. Prove integration economics on the smallest unit a balance sheet can underwrite, then replicate. Track A is a Class 8 FCEV truck bench under **$1M** all-in, built to publish bankable per-km TCO at three H2 price points. Track B is a 2 MW district hybrid microgrid under **$36M**, built to publish bankable LCOE/LCOH together with twelve months of resilience telemetry that a financier will actually accept.
+ELECTICITY is two tracks on one financial spine. The idea is plain. Prove integration economics on the smallest unit a balance sheet can underwrite, then replicate. Track A is a Class 8 FCEV truck bench under **$1M** all-in, built to publish per-km TCO at three H2 price points. Track B is a 2 MW district hybrid microgrid under **$36M**, built to publish LCOE/LCOH together with twelve months of resilience telemetry that a financier can check.
 
 The live model anchors the thesis. Every district scenario fits inside the $36M envelope. Solar+H2 inland prints **$26.9M / $214 MWh / $1.90 kg-H2**. Micro-hydro+river prints **$20.3M / $159 MWh / $4.30 kg-H2**. Tidal coastal prints **$24.2M / $198 MWh / $5.22 kg-H2**. The truck bench at $4/kg green-H2 lands at **$0.907/km** against a diesel reference of **$0.781/km** and a BEV reference of **$0.712/km**. Read that honestly. FCEV competes with diesel only where delivered H2 sits below $4/kg. That is precisely the regime IRA section 45V Tier-1 unlocks in the US, and the regime Hydrogen Headstart targets in Australia.
 
@@ -44,7 +44,7 @@ Numbers in claims 1, 3 and 5 are illustrative. They will be refreshed at submiss
 
 The energy transition stated in dollars rather than slogans. Global hydrogen demand reached roughly 97 Mt in 2024. Less than 1 Mt of that was low-emissions [IEA-GHR-2025]. So the gap is about 96 Mt, and policy is committed to closing it by 2030. At a conservative IRENA 2030 traded-H2 price near $2-3/kg [IRENA-RPGC-2024], the implied annual market is multi-hundred-billion dollars, built from a near-zero base. That is the headline.
 
-Now the parallel story. AEMO ISP 2024 books around AUD 120B of grid-side capex through 2050. Inside that envelope, 1-10 MW distributed firming is named explicitly as a least-regret category [AEMO-ISP-2024]. The unit being underwritten is a firmed renewable enclave with hydrogen carrying multi-day storage. There is no reference design with public bankable economics for it yet. ELECTICITY produces that reference design.
+Now the parallel story. AEMO ISP 2024 books around AUD 120B of grid-side capex through 2050. Inside that envelope, 1-10 MW distributed firming is named explicitly as a least-regret category [AEMO-ISP-2024]. The unit being underwritten is a firmed renewable enclave with hydrogen carrying multi-day storage. There is no reference design with public bankable economics for it yet. ELECTICITY aims to produce that reference design.
 
 A second demand pull sits adjacent. Heavy-duty trucking is roughly 7-8% of global transport CO2. It is also the only road segment where BEV economics are still genuinely contested at duty cycles above 500 km regional [DOE-HD-FCEV]. The FCEV opportunity is narrow but real, and right now no one has published a third-party-verifiable bench TCO for it.
 
