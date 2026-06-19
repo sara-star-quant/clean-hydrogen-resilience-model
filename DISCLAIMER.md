@@ -50,6 +50,15 @@ To the maximum extent allowed by law, the author accepts no liability for any di
 indirect, incidental, consequential, or special damages arising from use of, reliance on,
 or inability to use the material in this repository. Use is at your own risk.
 
+## User responsibility
+
+You are solely responsible for any deployment, build, operation, configuration, or decision
+made using this software, its model, its outputs, or its documentation, and for all actions
+and consequences that follow. Verify every number, assumption, and line of code against
+primary sources and qualified professional review before relying on it. Nothing here is a
+substitute for licensed engineering, legal, financial, tax, or safety advice. The author is
+not responsible for any outcome of your use. Use is entirely at your own risk.
+
 ## Forward looking statements
 
 Material that references future market sizing, cost trajectories, regulatory pathways, or
@@ -71,5 +80,5 @@ will be timely, complete, or correct.
 
 ## Effective date
 
-2026-05-05. The disclaimer applies to the repository state on that date and any later
+2026-06-19. The disclaimer applies to the repository state on that date and any later
 state unless explicitly superseded by a dated update at the top of this file.

@@ -27,8 +27,13 @@ and the refreshed dependency floors. The headless Monte Carlo distributions are 
 - `REFRESH.md` gate recording dependency pins and the data/citation refresh checklist.
 - `grants/CALL_TRACKER.md`, `grants/PARTNER_ONEPAGER.md`, and `grants/letters/` (LOI template
   plus status tracker).
+- Explicit user-responsibility clause in `DISCLAIMER.md`: the user is solely responsible for
+  deployment and all actions and outcomes from using the software, model, or outputs.
 
 ### Changed
+- Version bumped to 0.5.0 across the authoritative source (`electicity_model.__version__`),
+  packaging, citation, the playground footer and export stamp, and the regenerated
+  `report/_generated_tables.md`.
 - Dependency floors pinned to latest verifiable as of 2026-06-19 (pyyaml 6.0.3, matplotlib
   3.11, pytest 9.1, pytest-cov 7.1, hypothesis 6.155, openpyxl 3.1.5, python-pptx 1.0.2,
   python-docx 1.2, setuptools 82); pre-commit-hooks v5 to v6.

@@ -1931,7 +1931,7 @@ function buildExportText(d) {
   lines.push("=================================================================");
   lines.push("Date:                " + dateStr);
   lines.push("Time:                " + timeStr);
-  lines.push("Params snapshot:     2026-05  -  USD nominal, source years 2023 to 2025  -  playground v0.4.0");
+  lines.push("Params snapshot:     2026-05  -  USD nominal, source years 2023 to 2025  -  playground v0.5.0");
   lines.push("About these numbers: Costs come from public reports written between 2023 and 2025.");
   lines.push("                     They are not adjusted for inflation. Useful as a 'roughly today' baseline.");
   lines.push("                     The exact source for each number is in tech_params.yaml in the project repository.");
