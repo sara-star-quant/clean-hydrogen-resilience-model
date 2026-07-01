@@ -1,6 +1,6 @@
 # 09 - Appendix A: Fringe-Tech Evidence Review
 
-> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 ## A.1 Why this appendix exists
 

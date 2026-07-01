@@ -1,6 +1,6 @@
 # Changelog
 
-> **Disclaimer.** Project history record. Not financial, legal, engineering, or tax advice. See `DISCLAIMER.md`.
+> **Disclaimer.** Project history record. Not financial, legal, engineering, or tax advice. See [DISCLAIMER.md](DISCLAIMER.md).
 
 All notable changes to this project. Format follows the spirit of Keep a Changelog. Dates
 are in ISO 8601. Versions follow semantic versioning where the public surface is the
@@ -24,16 +24,16 @@ and the refreshed dependency floors. The headless Monte Carlo distributions are 
   fixed posture as always maintained, so its distributions are unchanged.
 - Four decision cards: EAST FRIEND re-export (betrayal), retaliation risk plus a chained
   aftermath, and alliance upkeep. Card total 16 to 20.
-- `REFRESH.md` gate recording dependency pins and the data/citation refresh checklist.
-- `grants/CALL_TRACKER.md`, `grants/PARTNER_ONEPAGER.md`, and `grants/letters/` (LOI template
+- [REFRESH.md](REFRESH.md) gate recording dependency pins and the data/citation refresh checklist.
+- [grants/CALL_TRACKER.md](grants/CALL_TRACKER.md), [grants/PARTNER_ONEPAGER.md](grants/PARTNER_ONEPAGER.md), and `grants/letters/` (LOI template
   plus status tracker).
-- Explicit user-responsibility clause in `DISCLAIMER.md`: the user is solely responsible for
+- Explicit user-responsibility clause in [DISCLAIMER.md](DISCLAIMER.md): the user is solely responsible for
   deployment and all actions and outcomes from using the software, model, or outputs.
 
 ### Changed
 - Version bumped to 0.5.0 across the authoritative source (`electicity_model.__version__`),
   packaging, citation, the playground footer and export stamp, and the regenerated
-  `report/_generated_tables.md`.
+  [report/_generated_tables.md](report/_generated_tables.md).
 - Dependency floors pinned to latest verifiable as of 2026-06-19 (pyyaml 6.0.3, matplotlib
   3.11, pytest 9.1, pytest-cov 7.1, hypothesis 6.155, openpyxl 3.1.5, python-pptx 1.0.2,
   python-docx 1.2, setuptools 82); pre-commit-hooks v5 to v6.
@@ -69,17 +69,17 @@ release.
   output across runs).
 - `LICENSE` (Apache License 2.0) for code, `LICENSE-DOCS` (CC BY 4.0) for documentation
   and data.
-- `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `CITATION.cff`.
-- `.github/PULL_REQUEST_TEMPLATE.md`, `.github/ISSUE_TEMPLATE/bug_report.md`,
-  `.github/ISSUE_TEMPLATE/feature_request.md`.
-- `BACKLOG.md` recording deferred work (Money type, mutmut roll-out, CI workflow
+- [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), `CITATION.cff`.
+- [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md), [.github/ISSUE_TEMPLATE/bug_report.md](.github/ISSUE_TEMPLATE/bug_report.md),
+  [.github/ISSUE_TEMPLATE/feature_request.md](.github/ISSUE_TEMPLATE/feature_request.md).
+- [BACKLOG.md](BACKLOG.md) recording deferred work (Money type, mutmut roll-out, CI workflow
   install).
-- `CHANGELOG.md` split out of README.
+- [CHANGELOG.md](CHANGELOG.md) split out of README.
 - `.pre-commit-config.yaml` with the non-ASCII scanner, the tech-params schema check,
   fast pytest, and pyright strict on commit; full pytest on push.
 - `Makefile` with `install`, `test`, `test-fast`, `test-perf`, `coverage`, `lint`,
   `scan`, `render`, `summary`, `publish-check`, `precommit-install`, `clean` targets.
-- `docs/mutation_baseline.md` documenting the deferred mutmut pilot and the rationale.
+- [docs/mutation_baseline.md](docs/mutation_baseline.md) documenting the deferred mutmut pilot and the rationale.
 
 ### Changed
 - `H2_LHV_KWH_PER_KG`, `HOURS_PER_YEAR`, `KM_PER_MILE`, `DIESEL_LHV_KWH_PER_L` consumed
@@ -115,7 +115,7 @@ release.
 - Hard-coded absolute `/Users/peterz/...` paths in committed markdown files.
 
 ### Security and publishing
-- `DISCLAIMER.md` covers not-financial-advice, not-legal-advice, not-a-fundraising-
+- [DISCLAIMER.md](DISCLAIMER.md) covers not-financial-advice, not-legal-advice, not-a-fundraising-
   solicitation, no-warranty, no-liability.
 - Banner referencing the disclaimer is on every customer-facing markdown file.
 - Repository is structured for publication on GitHub. The CI workflow ships at
@@ -139,9 +139,9 @@ Phase 2: supply resilience, ZTA, performance hardening.
 - `finance.py` with NPV, IRR (Newton plus bisection fallback), payback, annuity factor,
   cashflow series.
 - New CLI subcommands: `shock`, `regions`, `finance`, `package`.
-- New report chapters: `report/10_supply_resilience_and_regions.md`,
-  `report/11_extreme_threats_and_zta_zte.md`.
-- New `investor_memo.md` (financial register, separate from research register).
+- New report chapters: [report/10_supply_resilience_and_regions.md](report/10_supply_resilience_and_regions.md),
+  [report/11_extreme_threats_and_zta_zte.md](report/11_extreme_threats_and_zta_zte.md).
+- New [investor_memo.md](investor_memo.md) (financial register, separate from research register).
 - New `playground/microgrid_sim.html` browser sim-game with baked params.
 - LRU caches on raw YAML, scenarios YAML, and `_params_with_shock`.
 - Schema validation for `tech_params.yaml` (`ParamSchemaError`).
@@ -172,4 +172,4 @@ Phase 1: initial shipment.
 - 6 grant proposal templates (Horizon Europe, EU Innovation Fund, ARPA-E, DOE H2
   programs, ARENA, EECA/Callaghan).
 - Marp pitch deck.
-- `report/references.md` bibliography with citation keys.
+- [report/references.md](report/references.md) bibliography with citation keys.

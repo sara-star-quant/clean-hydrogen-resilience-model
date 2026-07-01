@@ -1,12 +1,12 @@
 # US DOE Hydrogen Programs - Proposal Skeleton (HFTO / OCED / Regional Clean Hydrogen Hubs)
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in `report/references.md`. Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
+*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in [report/references.md](../report/references.md). Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
 
 Target: $36M total project, 36 months, district-scale 2 MW hybrid microgrid deployment with green H2 production via electrolysis from renewables. Federal share approximately $18M (50% cost share typical for OCED demonstrations).
 
-Citations resolve in `../report/references.md`. Live numbers in `../report/_generated_tables.md`. Reusable narrative blocks in `./_shared_narrative.md`.
+Citations resolve in [../report/references.md](../report/references.md). Live numbers in [../report/_generated_tables.md](../report/_generated_tables.md). Reusable narrative blocks in [./_shared_narrative.md](_shared_narrative.md).
 
 ---
 
@@ -38,14 +38,14 @@ Three-pillar compliance is encoded in the operating-rule library at financial cl
 
 ## 3. Technical Approach
 
-Pull from `_shared_narrative.md` block: "Technology approach". Summary:
+Pull from [_shared_narrative.md](_shared_narrative.md) block: "Technology approach". Summary:
 
 - 2 MW PEM electrolyzer (alkaline / AEM substitution carried as risk mitigation per Section 10).
 - On-site renewable generation co-located with electrolyzer.
 - Buffer storage and dispatch model coupling renewable output to electrolyzer load.
 - District load served via hybrid microgrid with H2 backup.
 
-Three site variants modeled (`_generated_tables.md`):
+Three site variants modeled ([_generated_tables.md](../report/_generated_tables.md)):
 
 *Scenario output, not a forecast. Indicative numbers; replace at submission. See DISCLAIMER.md.*
 
@@ -59,7 +59,7 @@ All three variants fit within the $36M envelope. Inland solar plus H2 is recomme
 
 ## 4. Milestones
 
-Mapped to `../report/08_roadmap_milestones.md` (M1 through M10). Milestone IDs and dependencies are defined there; this section anchors them to the proposal timeline.
+Mapped to [../report/08_roadmap_milestones.md](../report/08_roadmap_milestones.md) (M1 through M10). Milestone IDs and dependencies are defined there; this section anchors them to the proposal timeline.
 
 | ID | Approx. Month | Deliverable |
 |---|---|---|
@@ -82,11 +82,11 @@ Explicit compliance with the three-pillar Treasury final rule [IRA-45V]. The com
 - **Hourly temporal matching from day one.** Dispatch firmware retires EACs on an hourly basis consistent with the Treasury phase-in schedule. Annual matching is not used as a fallback. Hourly EAC retirement records are reconciled to hourly electrolyser load and reported in the annual 45V audit package.
 - **Geographic deliverability.** Generation is co-located with the electrolyser at the project site within the same DOE-defined region; no inter-regional or distant-balancing-authority deliverability claims. The interconnection topology and the boundary of the deliverability region are documented at the FERC interconnection filing (Section 6).
 
-The project commits to Tier 1 carbon intensity (< 0.45 kgCO2e/kgH2). Lifecycle calculation methodology and assumptions are in `../report/06_environmental_lca.md`. The 45V auditor of record is contracted at financial close; the audit cadence is annual for the credit's ten-year window.
+The project commits to Tier 1 carbon intensity (< 0.45 kgCO2e/kgH2). Lifecycle calculation methodology and assumptions are in [../report/06_environmental_lca.md](../report/06_environmental_lca.md). The 45V auditor of record is contracted at financial close; the audit cadence is annual for the credit's ten-year window.
 
 ## 6. FERC Interconnection Plan
 
-Interconnection study filed at Month 0 to address R4 (interconnection queue delay, see `../report/07_risk_register.md`). FERC Order 2023 reformed the interconnection queue to a cluster-study, first-ready-first-served process; project schedule assumes the post-Order-2023 timeline [FERC-Order-2023].
+Interconnection study filed at Month 0 to address R4 (interconnection queue delay, see [../report/07_risk_register.md](../report/07_risk_register.md)). FERC Order 2023 reformed the interconnection queue to a cluster-study, first-ready-first-served process; project schedule assumes the post-Order-2023 timeline [FERC-Order-2023].
 
 Filing package at M0:
 
@@ -135,7 +135,7 @@ Numbers are indicative and consistent with the inland default scenario ($27.0M b
 
 ## 10. Risk Register. Top 5
 
-Pulled from `../report/07_risk_register.md`. Full register and mitigations in that file.
+Pulled from [../report/07_risk_register.md](../report/07_risk_register.md). Full register and mitigations in that file.
 
 | ID | Risk | Mitigation Headline |
 |---|---|---|

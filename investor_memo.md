@@ -1,6 +1,6 @@
 # ELECTICITY - Investor Memo
 
-> **Disclaimer.** This document is a worked template. It is not a fundraising solicitation, and nothing here is financial, legal, or tax advice. Numbers are illustrative scenario outputs drawn from the public sources cited in `report/references.md`. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** This document is a worked template. It is not a fundraising solicitation, and nothing here is financial, legal, or tax advice. Numbers are illustrative scenario outputs drawn from the public sources cited in [report/references.md](report/references.md). See [DISCLAIMER.md](DISCLAIMER.md) at the repository root.
 
 **Date:** 2026-05-05  -  **Round:** Series A bridge / institutional grant blend  -  **Ask:** see section 10  -  **Stage:** pre-deployment
 
@@ -16,7 +16,7 @@ The live model anchors the thesis. Every district scenario fits inside the $36M 
 
 We do not over-claim. BEV beats FCEV for passenger and most regional duty cycles, and we say so in print. The FCEV thesis is narrowly defensible: heavy-duty long-haul, back-to-base drayage, and refuel-time-constrained fleets. We treat LENR as not investable per [Berlinguette-2019]. The defensible asset is not a cell or a stack. It is the **integration methodology, the safety case, and the twelve-month telemetry record** that these two benches generate.
 
-Why now. The policy stack will not be richer than it is in the 2026-2030 window. IRA section 45V is in force as of this memo [IRA-45V]. EU CRMA Strategic Project designations are being executed against [EC-REPowerEU]. ARENA Hydrogen Headstart AUD 2B is disbursing [ARENA-H2]. AEMO ISP 2024 anchors AU grid-side capex into the same window [AEMO-ISP-2024]. Capital deployed in 2026-2027 captures the full subsidy stack on a ten-year asset. Capital deployed later does not.
+Why now. This model assumes the policy stack does not get richer than it is in the 2026-2030 window. IRA section 45V is in force as of this memo [IRA-45V]. EU CRMA Strategic Project designations are being executed against [EC-REPowerEU]. ARENA Hydrogen Headstart AUD 2B is disbursing [ARENA-H2]. AEMO ISP 2024 anchors AU grid-side capex into the same window [AEMO-ISP-2024]. Capital deployed in 2026-2027 captures the full subsidy stack on a ten-year asset. Capital deployed later does not.
 
 ---
 
@@ -72,7 +72,7 @@ A second demand pull sits adjacent. Heavy-duty trucking is roughly 7-8% of globa
 
 Three buckets. Each picked for a specific reason.
 
-**Patentable.** The segment-specific bench-TCO methodology. We file process claims around the bench instrumentation chain, the duty-cycle parameterisation, and the LCA boundary toolchain that produces a number a financier will sign on. Patents are filed in the US, EU, AU, JP, and KR. The filing strategy is defensive. Block fast-followers from claiming our methodology. Do not pursue royalty enforcement.
+**Patentable.** The segment-specific bench-TCO methodology. We file process claims around the bench instrumentation chain, the duty-cycle parameterisation, and the LCA boundary toolchain that produces a number intended to withstand financier diligence. Patents are filed in the US, EU, AU, JP, and KR. The filing strategy is defensive. Block fast-followers from claiming our methodology. Do not pursue royalty enforcement.
 
 **Trade secret.** Integration know-how. The procurement timing playbook, vendor qualification matrix, commissioning runbook, and incident response procedures live in the data room behind NDA. The safety case for combined hydrogen plus battery plus grid-tied operation is a defensible operating asset. It is documented internally and disclosed in regulatory filings only.
 
@@ -86,7 +86,7 @@ Three buckets. Each picked for a specific reason.
 
 *Indicative template. Not a fundraising solicitation. Numbers are scenario outputs, not forecasts.*
 
-The numbers in this section are derived from cited public sources by simple arithmetic. They are illustrative scenario outputs, not market forecasts. The arithmetic is shown so a reader can repeat or contest it. Source citations resolve in `report/references.md`.
+The numbers in this section are derived from cited public sources by simple arithmetic. They are illustrative scenario outputs, not market forecasts. The arithmetic is shown so a reader can repeat or contest it. Source citations resolve in [report/references.md](report/references.md).
 
 Methodology stated explicitly. All numbers illustrative; refresh against current IEA/IRENA datapoints at submission.
 
@@ -353,7 +353,7 @@ Base-case investor outcome at Series A bridge entry, exit 2031, 4x revenue at $5
 
 *Indicative template. Not a fundraising solicitation. Numbers are scenario outputs, not forecasts.*
 
-The 2026-2030 policy window will not be richer.
+This memo assumes the 2026-2030 policy window does not get richer.
 
 | Lever | Status May 2026 | Window |
 |---|---|---|
@@ -395,10 +395,10 @@ Placeholder. Populated at submission per data-room access tier.
 ### Pointers
 
 - Technical research: `/report/`
-- Live model output: `/report/_generated_tables.md`
-- Citation index: `/report/references.md`
+- Live model output: [/report/_generated_tables.md](report/_generated_tables.md)
+- Citation index: [/report/references.md](report/references.md)
 - Grant submissions: `/grants/`
-- Pitch deck: `/deck/pitch.md`
+- Pitch deck: [/deck/pitch.md](deck/pitch.md)
 - Cost model plus assumptions: `/model/`
 - Repository: [placeholder, provided per data-room access tier]
 

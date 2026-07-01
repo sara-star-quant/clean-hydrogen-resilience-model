@@ -1,5 +1,7 @@
 # Mutation testing baseline
 
+> **Disclaimer.** Engineering process document. Not financial, legal, engineering, or tax advice. See [DISCLAIMER.md](../DISCLAIMER.md).
+
 ## Status: deferred, not gated
 
 The Phase 3 plan called for a mutmut pilot on `model/src/electicity_model/lcoe.py`. The

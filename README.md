@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/sara-star-quant/clean-hydrogen-resilience-model?label=release)](https://github.com/sara-star-quant/clean-hydrogen-resilience-model/releases/latest) [![Code license: Apache 2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSE) [![Docs license: CC BY 4.0](https://img.shields.io/badge/docs-CC--BY--4.0-blue.svg)](LICENSE-DOCS)
 
-> **Disclaimer.** This is a research and modelling project, not financial, legal, engineering, or tax advice, and not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** This is a research and modelling project, not financial, legal, engineering, or tax advice, and not a fundraising solicitation. See [DISCLAIMER.md](DISCLAIMER.md) at the repository root.
 
 Open techno-economic model for green hydrogen via electrolysis from renewables, with two grounded deployment tracks (a Class 8 FCEV truck bench-validation and a 2 MW district hybrid microgrid) and a supply-chain resilience simulation. Reports LCOE, LCOH, and per-km TCO with reproducible, stamped artifacts.
 
@@ -36,7 +36,7 @@ The teaching point is the asymmetry: friendship has a real bill, and the bill is
 
 Water is the **carrier**, not the primary energy source. The chain runs renewable electricity to PEM electrolysis to H2 storage to fuel-cell reconversion (or direct combustion in the FCEV). Round-trip efficiency and capex are reported transparently in the model and chapter 04.
 
-Only grounded technology sits in the investable envelope. LENR and "cold fusion" claims are surveyed in `report/09_lenr_appendix.md` and rated **not investable** per the calorimetry-and-reproducibility critique in [Berlinguette-2019]. They appear in the appendix for completeness, not in the budget.
+Only grounded technology sits in the investable envelope. LENR and "cold fusion" claims are surveyed in [report/09_appendix_fringe_tech.md](report/09_appendix_fringe_tech.md) and rated **not investable** per the calorimetry-and-reproducibility critique in [Berlinguette-2019]. They appear in the appendix for completeness, not in the budget.
 
 ## Repository layout
 
@@ -136,13 +136,13 @@ electicity summary --out _summary.json       # machine-readable JSON
 | 2. Tests | `pytest -v` | 17+ tests pass; no skips outside platform-specific |
 | 3. District scenario | `electicity district --scenario district_solar_h2_inland` | capex $27.0M, LCOE $214/MWh, LCOH $1.90/kg (see model output) |
 | 4. Car scenario | `electicity car --scenario car_fcev_class8 --h2-price 4.0` | TCO $0.907/km (see model output) |
-| 5. Render artifacts | `electicity render-all` | `report/_generated_tables.md` and `deck/assets/*.png` rewritten with fresh stamps |
+| 5. Render artifacts | `electicity render-all` | [report/_generated_tables.md](report/_generated_tables.md) and `deck/assets/*.png` rewritten with fresh stamps |
 | 6. JSON summary | `electicity summary --out _summary.json` | machine-readable snapshot of all scenario outputs |
 | 7. Diff check | `git diff report/_generated_tables.md` | clean if model and scenarios unchanged |
 
 ## Headline numbers
 
-Read live from `report/_generated_tables.md` (model v0.1.0, params hash `214a7b5cb0b0`):
+Read live from [report/_generated_tables.md](report/_generated_tables.md) (model v0.1.0, params hash `214a7b5cb0b0`):
 
 - **Inland US district** (`district_solar_h2_inland`): $27.0M capex (fits $36M envelope), LCOE $214/MWh, LCOH $1.90/kg with 45V PTC applied (see model output).
 - **Class 8 FCEV at $4/kg green H2** (`car_fcev_class8`): $0.907/km TCO, vs **BEV** $0.712/km (`car_bev_class8_ref`) and **diesel** $0.781/km (`car_diesel_class8_ref`) (see model output).
@@ -162,16 +162,16 @@ Artifacts ship with a stamp combining the model version, the git SHA of the sour
 
 ## Changelog and backlog
 
-Release notes live in `CHANGELOG.md` at the repo root. Deferred work tracked in
-`BACKLOG.md`.
+Release notes live in [CHANGELOG.md](CHANGELOG.md) at the repo root. Deferred work tracked in
+[BACKLOG.md](BACKLOG.md).
 
 ## Pointers
 
-- Full technical detail: `report/01_introduction.md` through `report/08_*.md`.
-- Not-investable survey (LENR): `report/09_lenr_appendix.md`.
-- Grant-specific narratives: `grants/horizon_europe_cluster5.md`, `grants/doe_oced.md`, `grants/arena.md`, `grants/eeca.md`, `grants/eu_innovation_fund.md`, plus `grants/_shared_narrative.md`.
-- VC pitch: `deck/pitch.md` (Marp).
-- Bibliography: `report/references.md`.
+- Full technical detail: [report/01_problem_and_scope.md](report/01_problem_and_scope.md) through `report/08_*.md`.
+- Not-investable survey (LENR): [report/09_appendix_fringe_tech.md](report/09_appendix_fringe_tech.md).
+- Grant-specific narratives: [grants/eu_horizon_europe_cluster5.md](grants/eu_horizon_europe_cluster5.md), [grants/us_doe_h2_programs.md](grants/us_doe_h2_programs.md), [grants/au_arena.md](grants/au_arena.md), [grants/nz_eeca_callaghan.md](grants/nz_eeca_callaghan.md), [grants/eu_innovation_fund.md](grants/eu_innovation_fund.md), plus [grants/_shared_narrative.md](grants/_shared_narrative.md).
+- VC pitch: [deck/pitch.md](deck/pitch.md) (Marp).
+- Bibliography: [report/references.md](report/references.md).
 
 ## License
 
@@ -181,22 +181,22 @@ Dual-licensed.
   `docs/scan_non_ascii.py` script) is released under the **Apache License 2.0**.
   See `LICENSE`.
 - Documentation, data, and prose (everything under `report/`, `grants/`, the playground
-  copy, `investor_memo.md`, `README.md`, `CHANGELOG.md`, `BACKLOG.md`, `DISCLAIMER.md`,
+  copy, [investor_memo.md](investor_memo.md), [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [BACKLOG.md](BACKLOG.md), [DISCLAIMER.md](DISCLAIMER.md),
   `model/data/*.yaml`) is released under **Creative Commons Attribution 4.0
   International (CC BY 4.0)**. See `LICENSE-DOCS`.
 
 Cited third-party publications, datasets, and standards keep their own licences and are
-referenced by URL or DOI in `report/references.md`.
+referenced by URL or DOI in [report/references.md](report/references.md).
 
 If you use this project in academic work, see `CITATION.cff` for the suggested citation
 format.
 
 ## Project governance
 
-- `CODE_OF_CONDUCT.md` adopts the Contributor Covenant 2.1.
-- `CONTRIBUTING.md` covers test setup, the new-tech checklist, and PR conventions.
-- `SECURITY.md` covers the private-report channel.
-- `.github/PULL_REQUEST_TEMPLATE.md` and `.github/ISSUE_TEMPLATE/` carry templates for
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) adopts the Contributor Covenant 2.1.
+- [CONTRIBUTING.md](CONTRIBUTING.md) covers test setup, the new-tech checklist, and PR conventions.
+- [SECURITY.md](SECURITY.md) covers the private-report channel.
+- [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) and `.github/ISSUE_TEMPLATE/` carry templates for
   contributions and reports.
 
 ## Publishing checklist
@@ -213,7 +213,7 @@ grep -rn "TODO" --include="*.md" .        # confirm grant placeholders are inten
 
 A GitHub Actions workflow ships at `.github/workflows/ci.yml`. Jobs run on every push
 and pull request to `main`: pytest with coverage gate at 85 percent, pytest perf
-budgets, pyright strict, and a non-ASCII scan over markdown and the playground.
+budgets, and pyright strict.
 
 A second workflow at `.github/workflows/pages.yml` deploys the static site (landing
 page in `docs/` plus the playground in `playground/`) to GitHub Pages on every push to

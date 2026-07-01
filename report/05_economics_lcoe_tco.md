@@ -1,8 +1,8 @@
 # 05 - Economics: LCOE, LCOH, TCO
 
-> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-All numbers in this chapter are produced by `electicity_model` and regenerated end-to-end by `python -m electicity_model.cli render-all`. See `report/_generated_tables.md` for the live tables tied to the current `tech_params.yaml` hash.
+All numbers in this chapter are produced by `electicity_model` and regenerated end-to-end by `python -m electicity_model.cli render-all`. See [report/_generated_tables.md](_generated_tables.md) for the live tables tied to the current `tech_params.yaml` hash.
 
 ## Modelling assumptions and limitations
 
@@ -26,7 +26,7 @@ Project headline numbers use a private-equity discount of 9 percent. That keeps 
 
 ## District LCOE / LCOH
 
-See the generated table in `_generated_tables.md`. Validation gate V5 (chapter intro Validation table) requires the inland scenario LCOE in the 180 to 300 USD/MWh band. The model returns 214 USD/MWh, which passes.
+See the generated table in [_generated_tables.md](_generated_tables.md). Validation gate V5 (chapter intro Validation table) requires the inland scenario LCOE in the 180 to 300 USD/MWh band. The model returns 214 USD/MWh, which passes.
 
 ## Truck TCO
 

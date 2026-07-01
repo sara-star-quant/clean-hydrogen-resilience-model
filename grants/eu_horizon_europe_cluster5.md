@@ -1,12 +1,12 @@
 # Horizon Europe Cluster 5 (Climate, Energy and Mobility) - Proposal Skeleton
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in `report/references.md`. Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
+*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in [report/references.md](../report/references.md). Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
 
 This skeleton is structured to mirror the Part B proposal template used by Horizon
 Europe Research and Innovation Actions (RIA) and Innovation Actions (IA). Reusable
-narrative blocks are imported by quote from `_shared_narrative.md` in this
+narrative blocks are imported by quote from [_shared_narrative.md](_shared_narrative.md) in this
 directory; they are referenced inline by block name and not duplicated here.
 
 Indicative numbers are marked "indicative" and must be reset to call-specific
@@ -72,9 +72,9 @@ clause. Both options are accommodated by the structure below.
 
 ## 3. Excellence
 
-Reuse `_shared_narrative.md` Block: Technology approach (full text) for the
+Reuse [_shared_narrative.md](_shared_narrative.md) Block: Technology approach (full text) for the
 plain-language summary of T1 through T7. The Theory of Change applicable to
-this proposal is set out in `_shared_narrative.md` Block: Theory of Change and
+this proposal is set out in [_shared_narrative.md](_shared_narrative.md) Block: Theory of Change and
 is referenced in the Impact pathway in section 4.
 
 Ambition. The project advances the European state of the art on three fronts.
@@ -102,7 +102,7 @@ the bench campaign, with measurement campaign (WP5) starting from month 30.
 ## 4. Impact pathway
 
 The project's impact pathway follows the explicit Theory of Change in
-`_shared_narrative.md` Block: Theory of Change, with intervention,
+[_shared_narrative.md](_shared_narrative.md) Block: Theory of Change, with intervention,
 short-term, medium-term, and long-term outcomes; indicators; and
 assumptions. The quantified horizons below restate that block in
 proposal-table form.
@@ -194,13 +194,13 @@ conversion at 1.08 USD/EUR gives roughly EUR 32M to EUR 34M; the live FX
 rate at submission is used.
 
 All numbers in this section are indicative. The submission-time budget is
-generated from the open model (`_generated_tables.md`) at the reset
+generated from the open model ([_generated_tables.md](../report/_generated_tables.md)) at the reset
 parameter point.
 
 ## 7. Consortium
 
 Consortium composition required by the call structure. Roles are listed in
-`_shared_narrative.md` Block: Why this consortium and are reproduced here
+[_shared_narrative.md](_shared_narrative.md) Block: Why this consortium and are reproduced here
 in summary form for completeness:
 
 - Coordinator (research-performing organisation)
@@ -218,28 +218,28 @@ feasible.
 
 ## 8. Risks, ethics, Open Science
 
-Risk top 5. Import `_shared_narrative.md` Block: Risk top 5. R1 (leakage),
+Risk top 5. Import [_shared_narrative.md](_shared_narrative.md) Block: Risk top 5. R1 (leakage),
 R2 (bondability), R4 (interconnect), R6 (RFNBO compliance), R8 (tidal
 pre-commercial). Each risk is mapped to a WP lead at submission and to a
 dedicated contingency line in the budget.
 
 Ethics, gender equality, and public engagement. Import
-`_shared_narrative.md` Block: Ethics, gender equality plan, and public
+[_shared_narrative.md](_shared_narrative.md) Block: Ethics, gender equality plan, and public
 engagement. The Gender Equality Plan is a Horizon Europe eligibility
 condition for participating beneficiaries; the consortium-level GEP
 deliverable is owned by WP1 and aggregates the partner GEPs.
 
-GDPR and data protection. Import `_shared_narrative.md` Block: GDPR and
+GDPR and data protection. Import [_shared_narrative.md](_shared_narrative.md) Block: GDPR and
 data protection. The DPO contact is recorded at grant agreement entry
 into force; the joint-controller agreement is signed before any
 personal-data processing begins.
 
-Coordinated vulnerability disclosure. Import `_shared_narrative.md`
+Coordinated vulnerability disclosure. Import [_shared_narrative.md](_shared_narrative.md)
 Block: Coordinated vulnerability disclosure. The CVD policy is published
 at month three, integrated with WP7 safety-case work, and aligned with
 NIS2 reporting obligations where the host district is in scope.
 
-Open Science. Import `_shared_narrative.md` Block: Open Science / data
+Open Science. Import [_shared_narrative.md](_shared_narrative.md) Block: Open Science / data
 management baseline. The Data Management Plan is mandatory under Horizon
 Europe and is delivered at month six, updated at month eighteen and at
 project end, following the Horizon Europe DMP template. Peer-reviewed
@@ -257,7 +257,7 @@ WP3 and verified by a third party at WP5.
 
 ## 9. Annex pointers
 
-Citations resolve in `report/references.md`.
+Citations resolve in [report/references.md](../report/references.md).
 The keys most-used in this skeleton are listed below for reviewer convenience.
 
 - [EC-H2-Strategy]. EU Hydrogen Strategy.
@@ -269,7 +269,7 @@ The keys most-used in this skeleton are listed below for reviewer convenience.
 - [IPCC-AR6-WG1]. IPCC AR6 Working Group I assessment.
 - [Berlinguette-2019]. LENR reproducibility assessment.
 
-Live numbers: `_generated_tables.md` (model v0.1.0).
-Project narrative: `_shared_narrative.md`.
+Live numbers: [_generated_tables.md](../report/_generated_tables.md) (model v0.1.0).
+Project narrative: [_shared_narrative.md](_shared_narrative.md).
 Bench plan: project chapter on FCEV Class 8 24-month $1M campaign.
 District plan: project chapter on 2 MW hybrid 36-month $36M campaign.

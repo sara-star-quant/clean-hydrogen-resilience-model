@@ -1,6 +1,6 @@
 # Backlog
 
-> **Disclaimer.** Engineering backlog notes. Not financial, legal, engineering, or tax advice. See `DISCLAIMER.md`.
+> **Disclaimer.** Engineering backlog notes. Not financial, legal, engineering, or tax advice. See [DISCLAIMER.md](DISCLAIMER.md).
 
 Items deferred from completed phases. Each entry: title, rationale for deferral, expected
 effort, blast-radius note, and target phase if known.
@@ -35,7 +35,7 @@ pilot finds genuine gaps, the prudent next step is to fix them, not to scale mut
 
 **Expected effort.** Hours per module to run; days per genuine gap to fix.
 
-**Target phase.** Decision after Phase 3 Track F results land in `docs/mutation_baseline.md`.
+**Target phase.** Decision after Phase 3 Track F results land in [docs/mutation_baseline.md](docs/mutation_baseline.md).
 
 <!-- CI workflow item resolved in Phase 3: shipped at .github/workflows/ci.yml. -->
 

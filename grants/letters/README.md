@@ -1,9 +1,9 @@
 # Letters of Intent / Support
 
 > Tracks partner commitments for grant submissions. A signed LOI per consortium entity.
-> Reviewers reject paper partners; this folder is the evidence trail. See `DISCLAIMER.md`.
+> Reviewers reject paper partners; this folder is the evidence trail. See [DISCLAIMER.md](../../DISCLAIMER.md).
 
-One file per partner, named `loi_<entity-slug>.md`, copied from `_TEMPLATE_loi.md`.
+One file per partner, named `loi_<entity-slug>.md`, copied from [_TEMPLATE_loi.md](_TEMPLATE_loi.md).
 
 ## Status tracker
 

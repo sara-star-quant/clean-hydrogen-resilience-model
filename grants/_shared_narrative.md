@@ -1,10 +1,10 @@
 # Shared Narrative Blocks
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 Reusable narrative blocks for grant submissions. Each block below is a self-contained
 unit and may be cut-and-pasted into a specific call template. Citation keys resolve in
-`report/references.md`.
+[report/references.md](../report/references.md).
 
 ---
 
@@ -108,7 +108,7 @@ Live system-level numbers are imported from the open model:
 - FCEV Class 8 TCO range $0.91/km to $1.34/km at H2 prices of $4 to $9/kg
   [model-tables]; reference BEV $0.71/km, reference diesel $0.78/km.
 
-(Numbers cited from `report/_generated_tables.md`
+(Numbers cited from [report/_generated_tables.md](../report/_generated_tables.md)
 v0.1.0.)
 
 ## Block: Theory of Change

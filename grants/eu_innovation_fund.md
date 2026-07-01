@@ -1,13 +1,13 @@
 # EU Innovation Fund (CINEA) - Proposal Skeleton
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in `report/references.md`. Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
+*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in [report/references.md](../report/references.md). Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
 
 This skeleton is structured to mirror the Innovation Fund Part B template as
 operated by the European Climate, Infrastructure and Environment Executive
 Agency (CINEA). Reusable narrative blocks are imported by quote from
-`_shared_narrative.md` in this directory.
+[_shared_narrative.md](_shared_narrative.md) in this directory.
 
 Indicative numbers are marked "indicative" and must be reset to call-specific
 unit costs at submission. URL placeholders use the format
@@ -75,7 +75,7 @@ Innovation Fund, FCEV bench to Cluster 5 / CHJU.
 ## 3. Project description
 
 The project description is built from three reusable narrative blocks
-imported from `_shared_narrative.md`:
+imported from [_shared_narrative.md](_shared_narrative.md):
 
 - Block: Technology approach. The seven grounded water-medium
   technologies T1 through T7, hydrogen as an energy carrier, with
@@ -228,7 +228,7 @@ Decommissioning and circularity.
 
 ## 8. Open Science, DMP, Risk top 5
 
-Open Science. Import `_shared_narrative.md` Block: Open Science /
+Open Science. Import [_shared_narrative.md](_shared_narrative.md) Block: Open Science /
 data management baseline. The Innovation Fund's mandatory
 knowledge-sharing reports are satisfied by the project's open model,
 parameter, and quarterly telemetry releases. The
@@ -240,18 +240,18 @@ eighteen, and updated at project close, following the Horizon
 Europe DMP template (interoperable with the Innovation Fund's
 reporting expectations).
 
-Risk top 5. Import `_shared_narrative.md` Block: Risk top 5. R1
+Risk top 5. Import [_shared_narrative.md](_shared_narrative.md) Block: Risk top 5. R1
 (hydrogen leakage <1% target [Sand-2023]), R2 (composite tank
 bondability), R4 (grid interconnect), R6 (RFNBO compliance under
 [EU-RFNBO-1184]), R8 (tidal pre-commercial, ring-fenced).
 
-Decommissioning and circularity. Import `_shared_narrative.md`
+Decommissioning and circularity. Import [_shared_narrative.md](_shared_narrative.md)
 Block: Decommissioning and circularity. The decommissioning bond is
 posted before commissioning; the four streams (PGM recovery,
 Li-ion recycling, composite tank protocol, civil works
 reversibility) are tracked on the project asset register.
 
-GDPR, ethics, and CVD. Import `_shared_narrative.md` Block: GDPR
+GDPR, ethics, and CVD. Import [_shared_narrative.md](_shared_narrative.md) Block: GDPR
 and data protection, Block: Ethics, gender equality plan, and
 public engagement, and Block: Coordinated vulnerability disclosure.
 These apply during construction and across the 10-year monitoring
@@ -260,8 +260,8 @@ period.
 ---
 
 Citations resolve in
-`report/references.md`. Live
+[report/references.md](../report/references.md). Live
 numbers are sourced from
-`report/_generated_tables.md`
+[report/_generated_tables.md](../report/_generated_tables.md)
 (model v0.1.0). Reusable narrative blocks live in
-`grants/_shared_narrative.md`.
+[grants/_shared_narrative.md](_shared_narrative.md).

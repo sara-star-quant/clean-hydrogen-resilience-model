@@ -1,12 +1,12 @@
 # ARPA-E Concept Paper Skeleton. Heavy-Duty FCEV Bench Validation Track
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in `report/references.md`. Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
+*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in [report/references.md](../report/references.md). Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
 
 Target: $1M federal request, 24 months, bench validation of a Class 8 FCEV powertrain on chassis dyno.
 
-Citations resolve in `../report/references.md`. Live numbers in `../report/_generated_tables.md`. Reusable narrative blocks in `./_shared_narrative.md`.
+Citations resolve in [../report/references.md](../report/references.md). Live numbers in [../report/_generated_tables.md](../report/_generated_tables.md). Reusable narrative blocks in [./_shared_narrative.md](_shared_narrative.md).
 
 ---
 
@@ -43,7 +43,7 @@ Transformational claim, stated honestly:
 
 > Pure integration of commercially available PEMFC stacks, Li-ion buffers, and 700 bar tanks is not transformational research. The transformational element is the *defensibility model*: a published, reproducible bench protocol plus a segment-specific TCO methodology that ties measured stack degradation, hydrogen consumption, and duty-cycle efficiency to fleet-economics outcomes. Bench validation is the ground truth for that model. The transformational test is whether a fleet operator can read the published protocol, reproduce the measurements on a competing platform, and arrive at the same go / no-go decision; no current public dataset supports that test for Class 8 long-haul.
 
-This positioning is consistent with ARPA-E's preference for measurable, falsifiable outcomes over speculative breakthroughs. See `_shared_narrative.md` block "Honest positioning".
+This positioning is consistent with ARPA-E's preference for measurable, falsifiable outcomes over speculative breakthroughs. See [_shared_narrative.md](_shared_narrative.md) block "Honest positioning".
 
 ### 3.2 Why Incumbents Have Not Solved This
 
@@ -51,11 +51,11 @@ Three structural reasons explain why the existing FCEV ecosystem has not produce
 
 - BEV passenger-car dominance has pulled R&D capital toward light-duty cells and packs; HD-specific energy-density and refueling constraints are under-invested by both auto OEMs and tier-one suppliers, who optimize for volume.
 - Diesel HD economics remain favorable at fuel-cost equilibrium; without a reproducible TCO model under realistic H2 price scenarios, fleet buyers default to diesel. OEM-published consumption figures are produced under proprietary cycles, are not directly comparable across vendors, and are not reconciled to measured stack degradation under HD duty.
-- H2 cost: current delivered H2 prices materially exceed the $1/kg Hydrogen Shot target [DOE-H2Shot]. Project TCO at $4/kg, $6/kg, and $9/kg pump price is $0.907/km, $1.082/km, and $1.343/km respectively, against diesel reference $0.781/km and BEV reference $0.712/km (`_generated_tables.md`). The crossover behavior between BEV, diesel, and FCEV across duty cycle, depot access, and H2 price is not characterized in any open public dataset.
+- H2 cost: current delivered H2 prices materially exceed the $1/kg Hydrogen Shot target [DOE-H2Shot]. Project TCO at $4/kg, $6/kg, and $9/kg pump price is $0.907/km, $1.082/km, and $1.343/km respectively, against diesel reference $0.781/km and BEV reference $0.712/km ([_generated_tables.md](../report/_generated_tables.md)). The crossover behavior between BEV, diesel, and FCEV across duty cycle, depot access, and H2 price is not characterized in any open public dataset.
 
 Incumbent OEMs hold the relevant data internally and use it for product gating, not for fleet-buyer decision support. ARPA-E's role is to fund the public-good measurement campaign that no incumbent has commercial reason to publish.
 
-See `_shared_narrative.md` block "Honest positioning" for the full framing.
+See [_shared_narrative.md](_shared_narrative.md) block "Honest positioning" for the full framing.
 
 ### 3.3 Approach
 
@@ -73,7 +73,7 @@ See `_shared_narrative.md` block "Honest positioning" for the full framing.
 | R7 | Stack durability falls short of 25,000 h target under HD duty | Accelerated stress test plus post-mortem MEA analysis; fallback to lower duty assumption with documented derating |
 | R12 | Stack price at low volume materially above projections | Multi-vendor sourcing during bench phase; price sensitivity carried explicitly through TCO model |
 
-Full register in `../report/07_risk_register.md`.
+Full register in [../report/07_risk_register.md](../report/07_risk_register.md).
 
 ### 3.5 Commercialisation transition plan
 
@@ -89,7 +89,7 @@ The plan does not require additional federal funding past the bench campaign. Th
 
 ## 4. Milestones
 
-Mapped to `../report/08_roadmap_milestones.md`. ARPA-E-style go/no-go gates at each.
+Mapped to [../report/08_roadmap_milestones.md](../report/08_roadmap_milestones.md). ARPA-E-style go/no-go gates at each.
 
 | ID | Month | Deliverable | Go/No-Go |
 |---|---|---|---|
@@ -101,7 +101,7 @@ Mapped to `../report/08_roadmap_milestones.md`. ARPA-E-style go/no-go gates at e
 
 ## 5. Budget
 
-24 months, $1M federal request. Indicative breakdown matching `../report/03_car_track.md`. Indirect rate is a placeholder pending negotiated rate agreement.
+24 months, $1M federal request. Indicative breakdown matching [../report/03_car_track.md](../report/03_car_track.md). Indirect rate is a placeholder pending negotiated rate agreement.
 
 *Indicative budget; numbers are scenario outputs derived from cited public sources. Replace before submission. See DISCLAIMER.md.*
 

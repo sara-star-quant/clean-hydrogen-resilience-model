@@ -1,6 +1,6 @@
 # 00. Executive summary
 
-> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 <!-- model v0.1.0 @ no-git | params 214a7b5cb0b0 -->
 
@@ -21,7 +21,7 @@ The pathway is renewable electricity -> PEM electrolysis -> H2 storage -> fuel-c
 
 ## Headline numbers
 
-From `report/_generated_tables.md` (model v0.1.0, params hash `214a7b5cb0b0`).
+From [report/_generated_tables.md](_generated_tables.md) (model v0.1.0, params hash `214a7b5cb0b0`).
 
 | Metric | Value | Source |
 |---|---|---|
@@ -51,11 +51,11 @@ BEV beats FCEV on $/km for Class 8 at our reference parameters, and decisively s
 
 ## Pointers
 
-- Full technical detail: `report/01_introduction.md` through `report/08_*.md`.
-- Not-investable survey: `report/09_lenr_appendix.md`.
-- VC pitch: `deck/pitch.md`.
+- Full technical detail: [report/01_problem_and_scope.md](01_problem_and_scope.md) through `report/08_*.md`.
+- Not-investable survey: [report/09_appendix_fringe_tech.md](09_appendix_fringe_tech.md).
+- VC pitch: [deck/pitch.md](../deck/pitch.md).
 - Grant-specific narratives: `grants/*.md`.
-- Bibliography: `report/references.md`.
+- Bibliography: [report/references.md](references.md).
 
 ## Limitations and uncertainties
 

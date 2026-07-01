@@ -1,5 +1,7 @@
 # Refresh Gate
 
+> **Disclaimer.** Engineering process document. Not financial, legal, engineering, or tax advice. See [DISCLAIMER.md](DISCLAIMER.md).
+
 > Dependencies and external data are pinned to the latest versions verifiable on the
 > stamp date below. Nothing here is forecast. Re-run this gate before any release, grant
 > submission, or investor-facing export, and update the stamp.
@@ -66,9 +68,9 @@ Checklist (confirm each at source, record the as-of date in the citing file):
 - [ ] Market: IEA Global Hydrogen Review latest edition `[IEA-GHR-*]`
 - [ ] Market: IRENA / BNEF price and CAGR figures `[IRENA-RPGC-*]`, `[BNEF-H2-Outlook]`
 - [ ] System: AEMO ISP latest `[AEMO-ISP-*]`
-- [ ] FX rates in `grants/au_arena.md` (USD/AUD) and `grants/nz_eeca_callaghan.md` (USD/NZD)
-- [ ] Grant call IDs and close dates in `grants/CALL_TRACKER.md` (portal confirmation)
-- [ ] Bibliography URLs/DOIs in `report/references.md` still resolve
+- [ ] FX rates in [grants/au_arena.md](grants/au_arena.md) (USD/AUD) and [grants/nz_eeca_callaghan.md](grants/nz_eeca_callaghan.md) (USD/NZD)
+- [ ] Grant call IDs and close dates in [grants/CALL_TRACKER.md](grants/CALL_TRACKER.md) (portal confirmation)
+- [ ] Bibliography URLs/DOIs in [report/references.md](report/references.md) still resolve
 
 ## 3. Stamp update
 

@@ -1,11 +1,11 @@
 # NZ Funding - Proposal Skeleton (EECA GIDI / Callaghan Innovation / MBIE Endeavour)
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in `report/references.md`. Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
+*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in [report/references.md](../report/references.md). Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
 
 Status: skeleton. Live numbers pulled from
-`report/_generated_tables.md`
+[report/_generated_tables.md](../report/_generated_tables.md)
 (model v0.1.0, params 214a7b5cb0b0). FX is indicative at 1 USD = 1.65 NZD;
 re-run before submission.
 
@@ -108,7 +108,7 @@ see Section 10 and [Berlinguette-2019].
   proposal commits to peer-reviewed publication of integrated-operation
   results and to public release of the techno-economic model and
   parameter set, consistent with the maintenance rule in
-  `references.md`.
+  [references.md](../report/references.md).
 - Quarterly operational telemetry will be released for the district
   variant in alignment with NZ open-data norms.
 
@@ -124,7 +124,7 @@ see Section 10 and [Berlinguette-2019].
 | District descoped 1 MW (24 to 30 months) | $18M (approximately scaled inland solar plus H2) | NZD 30M |
 | District full 2 MW (36 months) | $36M envelope | NZD 60M |
 
-Live USD basis from `_generated_tables.md`: inland solar plus H2 $27.0M,
+Live USD basis from [_generated_tables.md](../report/_generated_tables.md): inland solar plus H2 $27.0M,
 river micro-hydro $20.3M, coastal tidal $24.2M (all 2 MW). The NZD 30M
 descoped figure assumes approximately 50% capex scaling for the 1 MW
 variant; refresh with a model run before lodgement.
