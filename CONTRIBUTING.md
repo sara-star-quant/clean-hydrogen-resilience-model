@@ -1,6 +1,6 @@
 # Contributing
 
-> **Disclaimer.** This is a research and modelling project. See `DISCLAIMER.md`.
+> **Disclaimer.** This is a research and modelling project. See [DISCLAIMER.md](DISCLAIMER.md).
 
 Thanks for considering a contribution. The project is small and the bar for changes is
 clear: every quantitative claim cites a public source, and every code change keeps the
@@ -63,8 +63,8 @@ The shortest path: one row in `model/data/tech_params.yaml` and one row in
 
 1. Add the parameter block to `model/data/tech_params.yaml`. Every field needs `value`,
    `range_low`, `range_high`, `unit`, `year`, `source`. The `source` value must be a
-   citation key already declared in `report/references.md`. If the source is new, add it
-   to `references.md` first.
+   citation key already declared in [report/references.md](report/references.md). If the source is new, add it
+   to [references.md](report/references.md) first.
 2. Add a `TechSpec(...)` row to the `DISTRICT_TECHS` list in `tech_registry.py`. Pick the
    right `CapexBasis` (PER_KW, PER_KWH, or PER_KG). Set `params_key_scenario_field` and
    `params_key_default` if the chemistry or sub-type can vary by scenario.
@@ -73,7 +73,7 @@ The shortest path: one row in `model/data/tech_params.yaml` and one row in
    tests verify the new row does not collide with existing labels; the equivalence test
    verifies the registry path matches the legacy formula (until Track B stage 2 lands).
 5. Run `electicity district --scenario <new>` to confirm it computes.
-6. Update `CHANGELOG.md` under "Unreleased" with one line describing the addition.
+6. Update [CHANGELOG.md](CHANGELOG.md) under "Unreleased" with one line describing the addition.
 7. Open a pull request with a short summary and a link to the source publication for the
    new numbers.
 
@@ -95,7 +95,7 @@ The shortest path: one row in `model/data/tech_params.yaml` and one row in
 - Include a `tests:` line listing new or updated tests.
 - Include a `docs:` line if you touched markdown.
 - Cite a public source for any new quantitative claim. Citations live in
-  `report/references.md`.
+  [report/references.md](report/references.md).
 
 ## Style
 
@@ -104,14 +104,14 @@ The shortest path: one row in `model/data/tech_params.yaml` and one row in
 - Tests: descriptive `test_*` names. Use `pytest.approx` for float comparisons. Use
   `@pytest.mark.perf` for any test that times more than 100 ms.
 - Documents: research-paper voice for `report/`, financial-advisor voice for
-  `investor_memo.md`, professional tech-writer voice for the playground. Always plain
+  [investor_memo.md](investor_memo.md), professional tech-writer voice for the playground. Always plain
   ASCII. The lint script `docs/scan_non_ascii.py` is a hard gate.
 
 ## Reporting bugs and suggesting features
 
-See `.github/ISSUE_TEMPLATE/` for templates. For security issues see `SECURITY.md` and do
+See `.github/ISSUE_TEMPLATE/` for templates. For security issues see [SECURITY.md](SECURITY.md) and do
 not file a public issue.
 
 ## Code of Conduct
 
-This project follows the Contributor Covenant 2.1. See `CODE_OF_CONDUCT.md`.
+This project follows the Contributor Covenant 2.1. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

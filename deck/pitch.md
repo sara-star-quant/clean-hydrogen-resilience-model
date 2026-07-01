@@ -9,7 +9,7 @@ footer: 'electicity-project, grounded technologies only'
 
 # Water-Medium Energy: Heavy-Duty FCEV + 2 MW District Hybrid
 
-> **Disclaimer.** This is a research and modelling project, not financial, legal, engineering, or tax advice, and not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** This is a research and modelling project, not financial, legal, engineering, or tax advice, and not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 Bench truck under $1M, district under $36M, grounded technology only.
 

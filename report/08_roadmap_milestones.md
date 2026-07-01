@@ -1,6 +1,6 @@
 # 08 - Roadmap and Milestones
 
-> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 This is a 36-month plan from grant award. Two parallel tracks run side by side. Each milestone is a TRL gate with a go / no-go decision criterion, not a soft target.
 

@@ -1,6 +1,6 @@
 # 01 - Problem & Scope
 
-> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 ## The energy crisis we are addressing
 
@@ -14,7 +14,7 @@ Three framing commitments anchor the work.
 
 ## Methods
 
-The study combines a parametric techno-economic model (`model/`) with a structured literature review and a fixed KPI rubric defined later in this chapter. In scope: capex and opex bands for mature components, LCOE and LCOH at site-archetype resolution, TCO at vehicle-segment resolution, and a safety-case envelope sized against published codes. Deferred to follow-on programmes: site-specific civil engineering, electrochemical stack-level CFD, on-road homologation, and any active grant-portal automation. Numerical outputs are regenerated from the model and cross-referenced in `report/_generated_tables.md`.
+The study combines a parametric techno-economic model (`model/`) with a structured literature review and a fixed KPI rubric defined later in this chapter. In scope: capex and opex bands for mature components, LCOE and LCOH at site-archetype resolution, TCO at vehicle-segment resolution, and a safety-case envelope sized against published codes. Deferred to follow-on programmes: site-specific civil engineering, electrochemical stack-level CFD, on-road homologation, and any active grant-portal automation. Numerical outputs are regenerated from the model and cross-referenced in [report/_generated_tables.md](_generated_tables.md).
 
 Out of scope:
 

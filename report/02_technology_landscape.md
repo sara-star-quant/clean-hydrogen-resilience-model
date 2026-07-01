@@ -1,6 +1,6 @@
 # 02 - Technology Landscape
 
-> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Research document. Not financial, legal, engineering, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 The seven technologies carried through this project. Each has a TRL rating, a cost basis, and a named role in the car track, the district track, or both. Rated TRL is the level demonstrated at MW-scale or vehicle-deployed-fleet. Laboratory TRL is generally higher.
 

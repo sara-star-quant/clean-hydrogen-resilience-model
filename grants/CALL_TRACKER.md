@@ -2,7 +2,7 @@
 
 > **Disclaimer.** Planning aid, not legal or financial advice. Call IDs, dates, and
 > envelopes must be confirmed against the official portal before any submission.
-> See `DISCLAIMER.md` at the repository root.
+> See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
 Scope: **EU-based applicant for now.** EU schemes are primary. US / AU / NZ rows are
 parked (kept for the record, not actionable until a resident entity exists in that
@@ -45,7 +45,7 @@ Why this is the lead target:
   exist yet.
 - TRL band 4-6 matches the **car bench validation** track as-is. No site, no EPC, no
   offtaker required for the RIA-shaped bench work.
-- The open cost model, report chapters, and `_shared_narrative.md` blocks already cover the
+- The open cost model, report chapters, and [_shared_narrative.md](_shared_narrative.md) blocks already cover the
   Part B narrative skeleton. The technical case is largely written.
 
 What still gates a Horizon RIA submission (the NEAR items):
@@ -71,6 +71,6 @@ Sequence:
 5. Submit before close                               -> verify: portal submission receipt
 ```
 
-Reference draft: `eu_horizon_europe_cluster5.md` in this directory.
-Narrative blocks: `_shared_narrative.md`.
-Live numbers: `../report/_generated_tables.md`.
+Reference draft: [eu_horizon_europe_cluster5.md](eu_horizon_europe_cluster5.md) in this directory.
+Narrative blocks: [_shared_narrative.md](_shared_narrative.md).
+Live numbers: [../report/_generated_tables.md](../report/_generated_tables.md).

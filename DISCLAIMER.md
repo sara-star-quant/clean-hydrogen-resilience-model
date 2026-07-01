@@ -14,7 +14,7 @@ numbers.
 
 - **Not financial advice.** Numbers in the model and memos are illustrative. Capex, LCOE,
   LCOH, IRR, NPV, payback, and market sizing are scenario outputs derived from public
-  sources cited in `report/references.md`. They are not personalised recommendations and
+  sources cited in [report/references.md](report/references.md). They are not personalised recommendations and
   not a basis for investment, divestment, hedging, or trading decisions.
 - **Not legal advice.** References to the IRA, EU CRMA, RFNBO delegated regulations, NFPA
   2, ATEX, AS/NZS standards, FERC Order 2023, and similar statutes describe the regime as
@@ -68,7 +68,7 @@ Do not assume the numbers in this repository are still accurate when you read it
 
 ## Sources
 
-Quantitative claims trace to citations in `report/references.md`. The cited works are the
+Quantitative claims trace to citations in [report/references.md](report/references.md). The cited works are the
 authoritative source. If a number in this repository disagrees with a current edition of
 the cited work, prefer the cited work and update the model.
 

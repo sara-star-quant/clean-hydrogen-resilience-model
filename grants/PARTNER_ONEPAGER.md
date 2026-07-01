@@ -2,7 +2,7 @@
 
 > One-page recruitment brief for a Horizon Europe Cluster 5 (RIA) consortium.
 > Send to prospective coordinators, universities, and industry partners.
-> Numbers are scenario outputs from the open model, not forecasts. See `DISCLAIMER.md`.
+> Numbers are scenario outputs from the open model, not forecasts. See [DISCLAIMER.md](../DISCLAIMER.md).
 
 ## The project in three lines
 
@@ -45,8 +45,8 @@ ethics and safety advisor. These attach to the district track, not the bench RIA
 - Open techno-economic model (Python, 223 tests), public parameters, reproducible
   stamped artifacts.
 - Full research report (12 chapters) with citation register.
-- Draft Part B skeleton (`eu_horizon_europe_cluster5.md`) and reusable narrative blocks
-  (`_shared_narrative.md`).
+- Draft Part B skeleton ([eu_horizon_europe_cluster5.md](eu_horizon_europe_cluster5.md)) and reusable narrative blocks
+  ([_shared_narrative.md](_shared_narrative.md)).
 - Honest competitive positioning and an explicit not-investable survey (LENR excluded).
 
 ## Timeline to submission

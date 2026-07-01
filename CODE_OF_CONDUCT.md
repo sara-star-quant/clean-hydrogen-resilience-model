@@ -1,5 +1,7 @@
 # Code of Conduct
 
+> **Disclaimer.** Community governance document. See [DISCLAIMER.md](DISCLAIMER.md).
+
 This project adopts the Contributor Covenant version 2.1 as its code of conduct.
 
 The full text and the reporting guide are published at the canonical source:
@@ -17,4 +19,4 @@ handled per the Contributor Covenant guide linked above.
 
 ## Disclaimer
 
-See `DISCLAIMER.md` for the project-wide non-advice and no-warranty notices.
+See [DISCLAIMER.md](DISCLAIMER.md) for the project-wide non-advice and no-warranty notices.

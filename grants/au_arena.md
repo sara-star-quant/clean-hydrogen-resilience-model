@@ -1,11 +1,11 @@
 # ARENA Funding Round - Proposal Skeleton
 
-> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See `DISCLAIMER.md` at the repository root.
+> **Disclaimer.** Template document for grant proposal drafting. Numbers are illustrative; placeholders must be replaced before submission. Not legal, financial, or tax advice. Not a fundraising solicitation. See [DISCLAIMER.md](../DISCLAIMER.md) at the repository root.
 
-*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in `report/references.md`. Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
+*Numbers in this template are illustrative scenario outputs, traceable to public sources cited in [report/references.md](../report/references.md). Replace each placeholder with site-specific, jurisdiction-specific, and time-current values before submission. Submission to a funding programme is the responsibility of the submitting entity, not this template.*
 
 Status: skeleton. Live numbers pulled from
-`report/_generated_tables.md`
+[report/_generated_tables.md](../report/_generated_tables.md)
 (model v0.1.0, params 214a7b5cb0b0). FX is indicative at 1 USD = 1.5 AUD;
 re-run before submission.
 
@@ -94,7 +94,7 @@ Live model output (USD; AUD figures in Section 6):
 | BEV Class 8 reference TCO | $0.712/km |
 | Diesel Class 8 reference TCO | $0.781/km |
 
-All figures from `_generated_tables.md` at params hash 214a7b5cb0b0.
+All figures from [_generated_tables.md](../report/_generated_tables.md) at params hash 214a7b5cb0b0.
 
 ---
 
@@ -108,7 +108,7 @@ All figures from `_generated_tables.md` at params hash 214a7b5cb0b0.
 | River-adjacent micro-hydro | Tasmania, Snowy region, NE NSW | $20.3M | $160/MWh | $4.30/kg |
 | Inland solar-only | Pilbara, SA Mid-North, NSW Western | $27.0M | $214/MWh | $1.90/kg |
 
-Numbers from `_generated_tables.md`. Inland solar-only is the lowest-LCOH
+Numbers from [_generated_tables.md](../report/_generated_tables.md). Inland solar-only is the lowest-LCOH
 variant and aligns with the Pilbara hydrogen hub mapping in
 [AEMO-ISP-2024]. Tidal LCOH is materially higher and is presented as a
 resilience-led variant for islanded coastal communities, not as a
@@ -191,7 +191,7 @@ Ongoing knowledge-sharing during the project:
   `electicity_model` codebase and `tech_params.yaml`) at month three,
   updated at every milestone gate.
 - Public release of all configurable parameters with traceable citations
-  (per the maintenance rule in `references.md`).
+  (per the maintenance rule in [references.md](../report/references.md)).
 - Quarterly operational telemetry release covering electrolyzer load
   factor, fuel-cell dispatch, microgrid SAIDI/SAIFI proxies, and hydrogen
   throughput, beginning at first commissioning (M5).

@@ -1,6 +1,6 @@
 # Security policy
 
-> **Disclaimer.** See `DISCLAIMER.md`.
+> **Disclaimer.** See [DISCLAIMER.md](DISCLAIMER.md).
 
 To report an issue privately, use GitHub's "Report a vulnerability" button under the
 Security tab on this repository, or contact the maintainer through the address listed
